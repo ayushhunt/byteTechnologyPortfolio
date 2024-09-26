@@ -1,4 +1,5 @@
 "use client"
+import Image from 'next/image';
 import { useState, useEffect } from 'react';
 
 const images = [
@@ -49,7 +50,7 @@ const Hero = () => {
             index === currentIndex ? 'opacity-100 scale-100' : 'opacity-0 scale-90'
           }`}
         >
-          <img
+          <Image
             src={item.image}
             alt={item.text}
             className="w-full h-full object-cover"
