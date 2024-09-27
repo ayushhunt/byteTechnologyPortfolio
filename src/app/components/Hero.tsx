@@ -54,6 +54,10 @@ const Hero = () => {
             src={item.image}
             alt={item.text}
             className="w-full h-full object-cover"
+            layout="fill" // Ensures the image takes up the full width/height of the container
+            objectFit="cover" // Ensures the image covers the container
+            quality={80} // Adjust quality for optimization
+            priority={index === currentIndex} //
           />
           <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
             <h2
