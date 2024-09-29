@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 
 interface ServiceCardProps {
@@ -10,7 +11,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ imageSrc, title, description 
   return (
     <div className="relative overflow-hidden rounded-lg shadow-lg group w-full h-64 bg-gray-800">
       {/* Image Section */}
-      <img
+      <Image
         src={imageSrc}
         alt={title}
         className="w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-110"
