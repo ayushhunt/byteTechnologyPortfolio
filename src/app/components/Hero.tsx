@@ -12,19 +12,14 @@ const images = [
 
 const Hero = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(false);
   const [textVisible, setTextVisible] = useState(false); // State to control text animation
 
   useEffect(() => {
-    // Start animation for text when the slide is selected
     const animateTextTimeout = setTimeout(() => setTextVisible(true), 500); // Start animation after 500ms
-
-    // Delay the next slide change by 4 seconds, but after the text has appeared
     const slideTimeout = setTimeout(() => {
       setTextVisible(false); // Hide the text before the next slide
-      setIsAnimating(false);
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 9000); // Wait 4 seconds after text appears before changing slides
+    }, 9000); // Wait 9 seconds before changing slides
 
     return () => {
       clearTimeout(animateTextTimeout);
