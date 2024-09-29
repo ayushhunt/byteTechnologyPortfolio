@@ -112,7 +112,7 @@ const Header = () => {
               <FaHandshake className='mr-2' /> Partners
             </Link>
             <Link href={"/contactus"} onClick={() => { setActiveTab("contactus"); toggleMenu(); }} className={`flex items-center hover:text-cyan-500 ${activeTab === "contactus" ? "text-cyan-500" : ""}`}>
-              <FaClipboard className='mr-2' /> Case Studies
+              <FaClipboard className='mr-2' /> Contact Us
             </Link>
           </nav>
           
