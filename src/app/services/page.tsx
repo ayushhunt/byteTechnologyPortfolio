@@ -29,7 +29,7 @@ const Services = () => {
   return (
     <div 
     className="min-h-screen py-10 bg-cover bg-center bg-no-repeat"
-    style={{ backgroundImage: "url('/Backgrounasset1.jpg')" }}
+    style={{  }}
   >
       <h1 className="text-4xl font-bold text-center mb-12 text-gray-800">Our Services</h1>
 

@@ -24,8 +24,8 @@ const Footer = () => {
                 
                 <Link href={'/services'}><li className='font-extrabold  text-sm text-slate-400  hover:text-white hover:font-thin transition-all hover:translate-x-2 duration-300 cursor-pointer '>Services</li></Link>
                <Link href={'/clients'}><li className='font-extrabold  text-sm text-slate-400  hover:text-white hover:font-thin transition-all hover:translate-x-2 duration-300 cursor-pointer'>Clients</li></Link> 
-               <Link href={'/casestudies'}> <li className='font-extrabold  text-sm text-slate-400  hover:text-white hover:font-thin transition-all hover:translate-x-2 duration-300 cursor-pointer'>Case Studies</li></Link>
-                <Link href={'/partners'}><li className='font-extrabold  text-sm text-slate-400  hover:text-white hover:font-thin transition-all hover:translate-x-2 duration-300 cursor-pointer'>Partners</li></Link>
+               <Link href={'/partners'}> <li className='font-extrabold  text-sm text-slate-400  hover:text-white hover:font-thin transition-all hover:translate-x-2 duration-300 cursor-pointer'>Partners</li></Link>
+                <Link href={'/contactus'}><li className='font-extrabold  text-sm text-slate-400  hover:text-white hover:font-thin transition-all hover:translate-x-2 duration-300 cursor-pointer'>Contact Us</li></Link>
             </ul>
         </div>
 

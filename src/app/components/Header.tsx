@@ -70,13 +70,13 @@ const Header = () => {
             </div>
           </Link>
 
-          <Link href={"/casestudies"}>
+          <Link href={"/contactus"}>
             <div 
-              className={`relative cursor-pointer px-3 py-1 flex items-center ${activeTab === "casestudies" ? "bg-gray-700/50 border-b-4 border-cyan-500" : ""} hover:text-cyan-400 hover:bg-gray-700/20 transition-all duration-300 ease-in-out`}
-              onClick={() => setActiveTab("casestudies")}
+              className={`relative cursor-pointer px-3 py-1 flex items-center ${activeTab === "contactus" ? "bg-gray-700/50 border-b-4 border-cyan-500" : ""} hover:text-cyan-400 hover:bg-gray-700/20 transition-all duration-300 ease-in-out`}
+              onClick={() => setActiveTab("contactus")}
             >
               <FaClipboard className='inline-block' />
-              <span className="hidden lg:inline ml-1">Case Studies</span>
+              <span className="hidden lg:inline ml-1">Contact Us</span>
             </div>
           </Link>
         </nav>
@@ -111,7 +111,7 @@ const Header = () => {
             <Link href={"/partners"} onClick={() => { setActiveTab("partners"); toggleMenu(); }} className={`flex items-center hover:text-cyan-500 ${activeTab === "partners" ? "text-cyan-500" : ""}`}>
               <FaHandshake className='mr-2' /> Partners
             </Link>
-            <Link href={"/casestudies"} onClick={() => { setActiveTab("casestudies"); toggleMenu(); }} className={`flex items-center hover:text-cyan-500 ${activeTab === "casestudies" ? "text-cyan-500" : ""}`}>
+            <Link href={"/contactus"} onClick={() => { setActiveTab("contactus"); toggleMenu(); }} className={`flex items-center hover:text-cyan-500 ${activeTab === "contactus" ? "text-cyan-500" : ""}`}>
               <FaClipboard className='mr-2' /> Case Studies
             </Link>
           </nav>

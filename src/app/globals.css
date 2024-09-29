@@ -2,46 +2,48 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Root element for custom CSS variables */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #ffffff; /* Background is now set to white */
+  --foreground: #171717; /* Text color is dark for contrast on a white background */
 }
 
-@media (prefers-color-scheme: dark) {
+/* Optional dark mode settings based on user's system preference */
+/*@media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+    --foreground: #ededed; 
+  } 
+} */
 
+/* Applying root colors to the body */
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  overflow-x: hidden;
+  color: var(--foreground); /* Text color from root */
+  background: var(--background); /* Background color from root */
+  font-family: Arial, Helvetica, sans-serif; /* Fallback fonts for cross-browser compatibility */
+  overflow-x: hidden; /* Prevents horizontal scrolling */
 }
 
+/* Custom utility for balanced text wrapping */
 @layer utilities {
   .text-balance {
-    text-wrap: balance;
+    text-wrap: balance; /* Enables balanced text wrapping (modern browser support only) */
   }
 }
 
-
-
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
-
-  .animate-fadeIn {
-    animation: fadeIn 1s ease-in-out forwards;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 1.2s ease-out;
+}
 
 
