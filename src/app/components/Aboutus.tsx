@@ -8,28 +8,28 @@ const AboutUs: React.FC = () => {
   const tabData = {
     agility: {
       text: 'Cloud',
-      imageSrc: '/image4.jpg',
+      imageSrc: '/Assests/cloud.jpg',
       imageAlt: 'Agility',
       imageWidth: 300, // Smaller width
       imageHeight: 180, // Smaller height
     },
     transformation: {
       text: 'Networking',
-      imageSrc: '/image3.jpg',
+      imageSrc: '/Assests/Network.jpg',
       imageAlt: 'Digital Transformation',
       imageWidth: 300,
       imageHeight: 180,
     },
     integration: {
-      text: 'Integration',
-      imageSrc: '/image2.jpg',
+      text: 'Security',
+      imageSrc: '/Assests/Security.jpg',
       imageAlt: 'System Integration',
       imageWidth: 300,
       imageHeight: 180,
     },
     innovation: {
       text: 'Innovating',
-      imageSrc: '/image3.jpg',
+      imageSrc: '/Assests/Innovation.jpg',
       imageAlt: 'Innovation',
       imageWidth: 300,
       imageHeight: 180,
@@ -39,16 +39,12 @@ const AboutUs: React.FC = () => {
   return (
     <div className="bg-white py-12 overflow-hidden">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-6">About Us</h2>
-        <p className="mb-4 text-gray-700">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada.
-        </p>
-        <p className="mb-4 text-gray-700">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
-        </p>
-        <p className="mb-8 text-gray-700">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nisi. Nulla quis sem at nibh elementum imperdiet.
-        </p>
+        <h2 className="text-3xl font-bold mb-6 text-center">About Us</h2>
+        <p className="text-lg text-gray-600 mb-4">
+        At BY Technology, we are more than just an IT consulting firm – we are your strategic partner in navigating 
+        the complexities of the digital landscape. With deep expertise and a commitment to innovation, we empower 
+        businesses to thrive in an ever-evolving technological ecosystem.
+      </p>
 
         {/* Tabs Section */}
         <div className="flex"> {/* Flex container to align tabs and image side by side */}

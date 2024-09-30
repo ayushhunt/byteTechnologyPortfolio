@@ -1,13 +1,14 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import { useState, useEffect } from "react";
 
 const images = [
-  { id: 1, image: "/image1.jpg", text: "Innovative Solutions" },
-  { id: 2, image: "/image2.jpg", text: "Cutting-edge Technology" },
-  { id: 3, image: "/image3.jpg", text: "Creative Design" },
-  { id: 4, image: "/image4.jpg", text: "Seamless Integration" },
-  { id: 5, image: "/image5.jpg", text: "Future-Proof Innovations" }
+  { id: 1, image: "/Assests/image1hero.jpg", text: "Innovative Solutions, Tailored for You" },
+  { id: 2, image: "/Assests/image2hero.jpg", text: "Empowering Businesses with Technology" },
+  { id: 3, image: "/Assests/image3hero.jpg", text: "Building the Future, One Project at a Time" },
+  { id: 4, image: "/Assests/image4hero.jpg", text: "Tech Expertise that Drives Success" },
+  { id: 5, image: "/Assests/image5hero.jpg", text: "Where Ideas Meet Execution" }
 ];
 
 const Hero = () => {
@@ -68,19 +69,19 @@ const Hero = () => {
                   />
                   <div className="absolute inset-0 bg-opacity-50 flex flex-col items-center justify-center px-8"> {/* Added px-8 for left/right gutter */}
                     <h2
-                      className={`text-white text-4xl md:text-6xl font-bold mb-8 transition-opacity duration-500 ease-in-out ${
+                      className={`text-indigo-400 text-4xl md:text-6xl font-bold mb-8 transition-opacity duration-500 ease-in-out ${
                         isCurrent && textVisible ? "opacity-100" : "opacity-0"
                       }`} // Trigger text animation based on state
                     >
                       {item.text}
                     </h2>
                     {isCurrent && textVisible && (
-                      <a
-                        href="#contact"
+                      <Link
+                        href={"/contactus"}
                         className="bg-cyan-500 text-white py-3 px-6 rounded-lg shadow-lg hover:bg-cyan-400 transition-all"
                       >
                         Get in Touch
-                      </a>
+                      </Link>
                     )}
                   </div>
                 </div>

@@ -13,7 +13,7 @@ const Footer = () => {
   };
   const handleSubmit = ()=>{};
   return (
-    <footer className='bg-gradient-to-r from-slate-900 via-slate-800 to-slate-700 flex flex-col space-y-8 space-x-8 px-8 py-10 text-white'>
+    <footer className='bg-gradient-to-r from-zinc-200 via-zinc-300 to-zinc-400 flex flex-col space-y-8 space-x-8 px-8 py-10 text-black'>
       <div className=' grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 space-y-8 ml-8 mr-8 '>
         <div className='justify-center py-12 sm:ml-5'>
             <Image src={"/Asset 2.svg"} alt='delhincrmap' width="170" height='100'></Image>
@@ -22,10 +22,10 @@ const Footer = () => {
             <ul>
                 <Link href={"/"} ><li className='font-extralight text-base'>Home</li></Link>
                 
-                <Link href={'/services'}><li className='font-extrabold  text-sm text-slate-400  hover:text-white hover:font-thin transition-all hover:translate-x-2 duration-300 cursor-pointer '>Services</li></Link>
-               <Link href={'/clients'}><li className='font-extrabold  text-sm text-slate-400  hover:text-white hover:font-thin transition-all hover:translate-x-2 duration-300 cursor-pointer'>Clients</li></Link> 
-               <Link href={'/partners'}> <li className='font-extrabold  text-sm text-slate-400  hover:text-white hover:font-thin transition-all hover:translate-x-2 duration-300 cursor-pointer'>Partners</li></Link>
-                <Link href={'/contactus'}><li className='font-extrabold  text-sm text-slate-400  hover:text-white hover:font-thin transition-all hover:translate-x-2 duration-300 cursor-pointer'>Contact Us</li></Link>
+                <Link href={'/services'}><li className='font-extrabold  text-sm text-slate-600  hover:text-black hover:font-thin transition-all hover:translate-x-2 duration-300 cursor-pointer '>Services</li></Link>
+               <Link href={'/clients'}><li className='font-extrabold  text-sm text-slate-600  hover:text-black hover:font-thin transition-all hover:translate-x-2 duration-300 cursor-pointer'>Clients</li></Link> 
+               <Link href={'/partners'}> <li className='font-extrabold  text-sm text-slate-600  hover:text-black hover:font-thin transition-all hover:translate-x-2 duration-300 cursor-pointer'>Partners</li></Link>
+                <Link href={'/contactus'}><li className='font-extrabold  text-sm text-slate-600  hover:text-black hover:font-thin transition-all hover:translate-x-2 duration-300 cursor-pointer'>Contact Us</li></Link>
             </ul>
         </div>
 

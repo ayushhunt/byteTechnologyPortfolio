@@ -15,6 +15,8 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ imageSrc, title, description 
         src={imageSrc}
         alt={title}
         className="w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-110"
+        
+        layout='fill'
       />
 
       {/* Text Description Section */}
@@ -29,30 +31,36 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ imageSrc, title, description 
 const ServicesComponent: React.FC = () => {
   const services = [
     {
-      imageSrc: 'image1.jpg',
-      title: 'Service 1',
-      description: 'This is a detailed description of service 1.',
+      imageSrc: '/Assests/Networking2.jpg',
+      title: 'Networking',
+      description: 'Seamless connectivity, powering your digital future.',
     },
     {
-      imageSrc: 'image2.jpg',
-      title: 'Service 2',
-      description: 'This is a detailed description of service 2.',
+      imageSrc: '/Assests/Cloud3.webp',
+      title: 'Cloud',
+      description: 'Empowering your business with scalable cloud solutions.',
     },
     {
-      imageSrc: 'image3.jpg',
-      title: 'Service 3',
-      description: 'This is a detailed description of service 3.',
+      imageSrc: '/Assests/Security3.jpg',
+      title: 'Security',
+      description: 'Securing your data, protecting your success',
     },
     {
-      imageSrc: 'image4.jpg',
-      title: 'Service 4',
-      description: 'This is a detailed description of service 4.',
+      imageSrc: '/Assests/Innovation2.jpg',
+      title: 'Innovation',
+      description: 'Driving innovation to unlock new possibilities.',
     },
   ];
 
   return (
     <div className="container mx-auto p-6">
       <h2 className="text-3xl font-bold text-center mb-8">Our Services</h2>
+      <p className="text-lg text-gray-600 mb-4">
+        At BY Technology, we offer a comprehensive range of IT services tailored to meet the diverse needs of modern businesses. 
+        From cloud computing and cybersecurity to custom software development and IT infrastructure management, 
+        we provide innovative solutions designed to drive growth, enhance security, and optimize efficiency. 
+        Our team of experts is dedicated to delivering customized strategies that align with your unique business goals.
+      </p>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {services.map((service, index) => (
           <ServiceCard

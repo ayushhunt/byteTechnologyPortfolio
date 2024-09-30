@@ -5,6 +5,7 @@ import ServicesComponent from "./components/ServicesComponent";
 import CallToAction from "./components/CallToAction";
 import ClientsSection from "./components/ClientsSection";
 import PartnersSection from "./components/PartnersSection";
+import Founders from "./components/Founders";
 
 export default function Home() {
   return (
@@ -39,6 +40,8 @@ export default function Home() {
 
       {/* Partners Section */}
       <PartnersSection />
+
+      <Founders/>
     </div>
   );
 }

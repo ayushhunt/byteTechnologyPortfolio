@@ -13,7 +13,7 @@ const Header = () => {
   };
 
   return (
-    <header className='bg-gradient-to-r from-gray-800 to-gray-900 p-4 shadow-lg h-13'>
+    <header className='bg-gradient-to-r from-zinc-200 via-zinc-300 to-zinc-400 p-4 shadow-lg h-13'>
       <div className='flex flex-row justify-between items-center px-6 py-1'>
         {/* Logo Section */}
         <Link href={"/"}>
