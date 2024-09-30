@@ -33,11 +33,11 @@ const ContactUs = () => {
         <div className="flex flex-col space-y-6">
           <div>
             <h3 className="text-xl font-semibold">Address</h3>
-            <p>123 Main St, City, Country</p>
+            <p>A-11, Shyam Vihar, Phase-2, Dwarka Sector 19B, New Delhi -110043</p>
           </div>
           <div>
             <h3 className="text-xl font-semibold">Phone</h3>
-            <p>(123) 456-7890</p>
+            <p>+91-8800202305</p>
           </div>
           <div>
             <h3 className="text-xl font-semibold">Map</h3>

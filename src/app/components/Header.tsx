@@ -2,7 +2,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState } from 'react';
-import { FaBars, FaTimes, FaHome, FaServicestack, FaUsers, FaHandshake, FaClipboard } from 'react-icons/fa';
+import { FaBars, FaTimes, FaHome, FaServicestack, FaUsers, FaHandshake } from 'react-icons/fa';
+import { MdOutlinePhoneCallback } from "react-icons/md";
 
 const Header = () => {
   const [activeTab, setActiveTab] = useState("home");
@@ -13,7 +14,7 @@ const Header = () => {
   };
 
   return (
-    <header className='bg-gradient-to-r from-zinc-200 via-zinc-300 to-zinc-400 p-4 shadow-lg h-13'>
+    <header className='bg-gradient-to-r from-zinc-200 via-zinc-300 to-zinc-400 p-4 shadow-lg h-13 sticky top-0 z-50'>
       <div className='flex flex-row justify-between items-center px-6 py-1'>
         {/* Logo Section */}
         <Link href={"/"}>
@@ -29,7 +30,7 @@ const Header = () => {
         </Link>
 
         {/* Navigation Links */}
-        <nav className='hidden md:flex items-center space-x-4 lg:space-x-12 shadow-lg px-8 py-1 text-lg font-mono text-white bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900 rounded-full transition-all duration-500 ease-in-out transform hover:shadow-2xl'>
+        <nav className='hidden md:flex items-center space-x-4 lg:space-x-12 shadow-lg px-8 py-1 text-lg font-mono text-white bg-gradient-to-r from-gray-900 via-gray-700 to-gray-600 rounded-full transition-all duration-500 ease-in-out transform hover:shadow-2xl'>
           <Link href={"/"}>
             <div 
               className={`relative cursor-pointer px-3 py-1 flex items-center ${activeTab === "home" ? "bg-gray-700/50 border-b-4 border-cyan-500" : ""} hover:text-cyan-400 hover:bg-gray-700/20 transition-all duration-300 ease-in-out`}
@@ -75,7 +76,7 @@ const Header = () => {
               className={`relative cursor-pointer px-3 py-1 flex items-center ${activeTab === "contactus" ? "bg-gray-700/50 border-b-4 border-cyan-500" : ""} hover:text-cyan-400 hover:bg-gray-700/20 transition-all duration-300 ease-in-out`}
               onClick={() => setActiveTab("contactus")}
             >
-              <FaClipboard className='inline-block' />
+              <MdOutlinePhoneCallback className='inline-block' />
               <span className="hidden lg:inline ml-1">Contact Us</span>
             </div>
           </Link>
@@ -93,7 +94,7 @@ const Header = () => {
 
       {/* Sidebar for Mobile Menu */}
       {isOpen && (
-        <div className='fixed top-0 right-0 w-[75%] sm:w-[50%] h-full bg-gradient-to-b from-gray-900 via-gray-800 to-gray-700 p-8 z-50 flex flex-col justify-between'>
+        <div className='fixed top-0 right-0 w-[75%] sm:w-[50%] h-full bg-gradient-to-b from-zinc-200 via-zinc-300 to-zinc-400 p-8 z-50 flex flex-col justify-between'>
           {/* Close Icon Inside Sidebar */}
           <div className='flex justify-end'>
             <FaTimes className="text-3xl text-white cursor-pointer" onClick={toggleMenu} />
@@ -112,7 +113,7 @@ const Header = () => {
               <FaHandshake className='mr-2' /> Partners
             </Link>
             <Link href={"/contactus"} onClick={() => { setActiveTab("contactus"); toggleMenu(); }} className={`flex items-center hover:text-cyan-500 ${activeTab === "contactus" ? "text-cyan-500" : ""}`}>
-              <FaClipboard className='mr-2' /> Contact Us
+              <MdOutlinePhoneCallback className='mr-2' /> Contact Us
             </Link>
           </nav>
           

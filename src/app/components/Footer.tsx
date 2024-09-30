@@ -20,38 +20,38 @@ const Footer = () => {
         </div>
         <div className='font-mono space-y-6'>
             <ul>
-                <Link href={"/"} ><li className='font-extralight text-base'>Home</li></Link>
+                <Link href={"/"} ><li className='font-extralight text-lg'>Home</li></Link>
                 
-                <Link href={'/services'}><li className='font-extrabold  text-sm text-slate-600  hover:text-black hover:font-thin transition-all hover:translate-x-2 duration-300 cursor-pointer '>Services</li></Link>
-               <Link href={'/clients'}><li className='font-extrabold  text-sm text-slate-600  hover:text-black hover:font-thin transition-all hover:translate-x-2 duration-300 cursor-pointer'>Clients</li></Link> 
-               <Link href={'/partners'}> <li className='font-extrabold  text-sm text-slate-600  hover:text-black hover:font-thin transition-all hover:translate-x-2 duration-300 cursor-pointer'>Partners</li></Link>
-                <Link href={'/contactus'}><li className='font-extrabold  text-sm text-slate-600  hover:text-black hover:font-thin transition-all hover:translate-x-2 duration-300 cursor-pointer'>Contact Us</li></Link>
+                <Link href={'/services'}><li className='font-extrabold  text-base text-slate-600  hover:text-black hover:font-thin transition-all hover:translate-x-2 duration-300 cursor-pointer '>Services</li></Link>
+               <Link href={'/clients'}><li className='font-extrabold  text-base text-slate-600  hover:text-black hover:font-thin transition-all hover:translate-x-2 duration-300 cursor-pointer'>Clients</li></Link> 
+               <Link href={'/partners'}> <li className='font-extrabold  text-base text-slate-600  hover:text-black hover:font-thin transition-all hover:translate-x-2 duration-300 cursor-pointer'>Partners</li></Link>
+                <Link href={'/contactus'}><li className='font-extrabold  text-base text-slate-600  hover:text-black hover:font-thin transition-all hover:translate-x-2 duration-300 cursor-pointer'>Contact Us</li></Link>
             </ul>
         </div>
 
         <div className="flex flex-col font-mono space-y-2 ">
       {/* Contact Us Heading */}
-      <div className="font-extralight text-base ">
+      <div className="font-extralight text-lg ">
         Contact Us
       </div>
 
       {/* Email */}
-      <div className="flex items-center text-sm">
+      <div className="flex items-center text-base">
         <MdEmail className="text-gray-600 hover:text-indigo-600 transition duration-300" />
-        <span className="font-light ml-1">ByteTechnology@gmail.com </span>
+        <span className="font-bold  ml-2">Info@bytechnology.in </span>
         <FiCopy
-          onClick={() => copyToClipboard('ByteTechnology@gmail.com')}
+          onClick={() => copyToClipboard('Info@bytechnology.in')}
           className="cursor-pointer font-light ml-1 text-gray-600 hover:text-indigo-600 transition duration-300"
           title="Copy Email"
         />
       </div>
 
       {/* Phone */}
-      <div className="flex items-center text-sm">
+      <div className="flex items-center text-base">
         <FiPhone className="text-gray-600 hover:text-indigo-600 transition duration-300" />
-        <span className="font-semibold ml-1">+91 123456789</span>
+        <span className="font-semibold ml-1">+91-8800202305</span>
         <FiCopy
-          onClick={() => copyToClipboard('+91123456789')}
+          onClick={() => copyToClipboard('+91-8800202305')}
           className="cursor-pointer ml-1 text-gray-600 hover:text-indigo-600 transition duration-300"
           title="Copy Phone Number"
         />
@@ -62,7 +62,7 @@ const Footer = () => {
         <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
           <FaFacebook className="text-slate-950 text-2xl  hover:text-indigo-600 transition-all shadow-2xl transform hover:-translate-y-3 ease-in-out cursor-pointer" />
         </a>
-        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.linkedin.com/company/bytechnology-ind" target="_blank" rel="noopener noreferrer">
           <FaLinkedin className="text-slate-950 text-2xl  hover:text-indigo-600 transition-all shadow-2xl transform hover:-translate-y-3 ease-in-out cursor-pointer" />
         </a>
         <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
@@ -81,13 +81,13 @@ const Footer = () => {
         <input 
           type="email" 
           placeholder="Enter your email" 
-          className="bg-slate-400 text-black placeholder-white border-black shadow-md h-10 px-4 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all"
+          className="bg-slate-400 text-black placeholder-white border-black shadow-md h-10 px-4 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-blue-700 transition-all"
         />
 
         {/* Submit Button */}
         <button 
           onClick={handleSubmit}
-          className="bg-blue-400 text-white font-mono text-base px-4 rounded-r-lg hover:bg-blue-500 transition-all"
+          className="bg-blue-700 text-black font-mono text-base px-4 rounded-r-lg hover:bg-blue-900 transition-all"
         >
           Submit
         </button>
@@ -106,7 +106,7 @@ const Footer = () => {
       href="https://your-website-url.com" 
       target="_blank" 
       rel="noopener noreferrer" 
-      className="text-blue-300 hover:text-blue-500 transition-colors duration-300 ml-1"
+      className="text-blue-500 hover:text-blue-700 transition-colors duration-300 ml-1"
     >
       Ayush Singh
     </a>

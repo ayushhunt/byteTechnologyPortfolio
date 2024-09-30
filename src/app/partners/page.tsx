@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaAws, FaMicrosoft, FaGoogle, } from 'react-icons/fa';
+import { FaAws,  FaGoogle, } from 'react-icons/fa';
 import { SiAzuredevops, SiFortinet, SiZoho, SiAutodesk, SiLenovo, SiSynology } from 'react-icons/si';
 import { MdSecurity } from 'react-icons/md';
 
