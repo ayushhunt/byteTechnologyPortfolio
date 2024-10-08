@@ -49,7 +49,7 @@ const Clients = () => {
       alt:'rsm'
     },
     {
-      name:'samara capital.png',
+      name:'samara capital',
       imageSrc:'/clients/samara capital.png',
       alt:'samara'
     },
