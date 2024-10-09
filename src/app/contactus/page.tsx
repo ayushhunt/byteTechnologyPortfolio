@@ -35,7 +35,7 @@ export default function ContactUs() {
             {/* Email */}
             <div>
               <label className="block text-lg font-medium text-gray-100">
-                Email *
+                Email 
               </label>
               <input
                 type="email"
