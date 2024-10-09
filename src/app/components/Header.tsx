@@ -86,7 +86,9 @@ const Header = () => {
               <span className="hidden lg:inline ml-1">Contact Us</span>
             </div>
           </Link>
+        
         </nav>
+
 
         {/* Mobile Menu Icon */}
         <div className='md:hidden flex items-center'>
