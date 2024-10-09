@@ -7,29 +7,7 @@ export default function ContactUs() {
    
       <h2 className="text-3xl font-bold text-center mb-8">Contact Us</h2>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        {/* Contact Form */}
-        <div className="flex flex-col space-y-4">
-          <input
-            type="text"
-            placeholder="Your Name"
-            className="w-full p-4 bg-gray-100 rounded-lg shadow-inner focus:outline-none focus:ring-2 focus:ring-indigo-500"
-          />
-          <input
-            type="email"
-            placeholder="Your Email"
-            className="w-full p-4 bg-gray-100 rounded-lg shadow-inner focus:outline-none focus:ring-2 focus:ring-indigo-500"
-          />
-          <textarea
-            placeholder="Your Message"
-            className="w-full p-4 h-32 bg-gray-100 rounded-lg shadow-inner focus:outline-none focus:ring-2 focus:ring-indigo-500"
-          ></textarea>
-          <button className="px-6 py-3 bg-indigo-600 text-white rounded-lg shadow-lg hover:bg-indigo-700 transition-all duration-300">
-            Send Message
-          </button>
-
-        </div>
-      </div>
+    
 
       {/* Main Content Section */}
       <div className="bg-gray-50 grid grid-cols-1 md:grid-cols-2 gap-8 mt-10 rounded-3xl shadow-lg p-8">
