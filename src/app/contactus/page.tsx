@@ -1,10 +1,10 @@
 import Image from 'next/image';
-import Mission from '../components/Mission';
+
 
 const ContactUs = () => {
   return (
     <div className="container mx-auto p-8 bg-white rounded-lg shadow-lg">
-      <Mission />
+   
       <h2 className="text-3xl font-bold text-center mb-8">Contact Us</h2>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
