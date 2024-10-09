@@ -1,25 +1,33 @@
-import Image from "next/image";
-import Mission from "../components/Mission";
+import Image from 'next/image';
+
 
 export default function ContactUs() {
   return (
-    <div className="container mx-auto p-6 space-y-10">
-      {/* Header Section */}
-      <div className="relative mt-0 rounded-md">
-        {/* Background Image Section */}
-        <div
-          className="relative flex items-center justify-center h-[200px] bg-cover bg-center rounded-3xl"
-          style={{
-            backgroundImage: `url('/contactus/contact4.png')`, // Replace with your actual image path
-          }}
-        >
-          {/* Foreground Text */}
-          {/* <div className="text-center px-4 py-2 bg-opacity-70  rounded-md">
-            <h1 className="text-4xl font-bold  text-black">Contact Us</h1>
-            <p className="text-lg mt-2 text-black">
-              Get in touch and let us know how we can help.
-            </p>
-          </div> */}
+    <div className="container mx-auto p-8 bg-white rounded-lg shadow-lg">
+   
+      <h2 className="text-3xl font-bold text-center mb-8">Contact Us</h2>
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        {/* Contact Form */}
+        <div className="flex flex-col space-y-4">
+          <input
+            type="text"
+            placeholder="Your Name"
+            className="w-full p-4 bg-gray-100 rounded-lg shadow-inner focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          />
+          <input
+            type="email"
+            placeholder="Your Email"
+            className="w-full p-4 bg-gray-100 rounded-lg shadow-inner focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          />
+          <textarea
+            placeholder="Your Message"
+            className="w-full p-4 h-32 bg-gray-100 rounded-lg shadow-inner focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          ></textarea>
+          <button className="px-6 py-3 bg-indigo-600 text-white rounded-lg shadow-lg hover:bg-indigo-700 transition-all duration-300">
+            Send Message
+          </button>
+
         </div>
       </div>
 
