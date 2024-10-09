@@ -5,20 +5,27 @@ import React from 'react'
 import { FaFacebook, FaLinkedin, FaTwitter } from 'react-icons/fa'
 import { FiCopy, FiPhone } from 'react-icons/fi'
 import { MdEmail } from 'react-icons/md'
+import {Quicksand} from 'next/font/google'
+
+const roboto = Quicksand({
+  weight: '600', // Specify the font weights you want to use
+  subsets: ['latin'], // Latin subset for most common usage
+});
 
 const Footer = () => {
   const copyToClipboard = (text: string) => {
     navigator.clipboard.writeText(text);
     alert(`${text} copied to clipboard`);
   };
+
   const handleSubmit = ()=>{};
   return (
-    <footer className='bg-gradient-to-r from-zinc-200 via-zinc-300 to-zinc-400 flex flex-col space-y-8 space-x-8 px-8 py-10 text-black'>
+    <footer className={` ${roboto.className} bg-gradient-to-r from-zinc-200 via-zinc-300 to-zinc-400 flex flex-col space-y-8 space-x-8 px-8 py-10 text-black`}>
       <div className=' grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 space-y-8 ml-8 mr-8 '>
         <div className='justify-center py-12 sm:ml-5'>
             <Image src={"/Asset 2.svg"} alt='delhincrmap' width="170" height='100'></Image>
         </div>
-        <div className='font-mono space-y-6'>
+        <div className=' space-y-6'>
             <ul>
                 <Link href={"/"} ><li className='font-extralight text-lg'>Home</li></Link>
                 
@@ -29,7 +36,7 @@ const Footer = () => {
             </ul>
         </div>
 
-        <div className="flex flex-col font-mono space-y-2 ">
+        <div className="flex flex-col space-y-2 ">
       {/* Contact Us Heading */}
       <div className="font-extralight text-lg ">
         Contact Us
@@ -71,7 +78,7 @@ const Footer = () => {
       </div>
     </div>
 
-    <div className="flex flex-col items-center font-mono">
+    <div className="flex flex-col items-center">
       <p className="text-lg mb-2 text-center">
         Subscribe to our <br /> Newsletter
       </p>

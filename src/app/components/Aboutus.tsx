@@ -2,6 +2,7 @@
 import Image from 'next/image';
 import React, { useState } from 'react';
 
+
 const AboutUs: React.FC = () => {
   const [currentTab, setCurrentTab] = useState('agility');
 
@@ -37,10 +38,11 @@ const AboutUs: React.FC = () => {
   };
 
   return (
-    <div className="bg-white py-12 overflow-hidden">
+    <div className={` bg-white py-12 overflow-hidden`}>
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-6 text-center">About Us</h2>
-        <p className="text-lg text-gray-600 mb-4">
+        <h2 className="font-primary text-3xl font-bold mb-6 text-center">About Us</h2>
+        <p className="font-secondary
+         text-lg text-gray-600 mb-4">
         At BY Technology, we are more than just an IT consulting firm – we are your strategic partner in navigating 
         the complexities of the digital landscape. With deep expertise and a commitment to innovation, we empower 
         businesses to thrive in an ever-evolving technological ecosystem.
