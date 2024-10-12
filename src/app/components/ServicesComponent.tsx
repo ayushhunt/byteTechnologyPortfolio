@@ -1,29 +1,50 @@
-import Image from 'next/image';
-import React from 'react';
+import Image from "next/image";
+import React from "react";
 
+// Define the service card component
 interface ServiceCardProps {
-  imageSrc: string;
+  icon: string;
   title: string;
   description: string;
+  link: string;
 }
 
-const ServiceCard: React.FC<ServiceCardProps> = ({ imageSrc, title, description }) => {
+const ServiceCard: React.FC<ServiceCardProps> = ({
+  icon,
+  title,
+  description,
+  link,
+}) => {
   return (
-    <div className="relative overflow-hidden rounded-lg shadow-lg group w-full h-64 bg-gray-800">
-      {/* Image Section */}
-      <Image
-        src={imageSrc}
-        alt={title}
-        className="w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-110"
-        
-        layout='fill'
-      />
-
-      {/* Text Description Section */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out flex flex-col justify-end p-4">
-        <h3 className="text-lg font-bold text-white mb-2">{title}</h3>
-        <p className="text-sm text-white">{description}</p>
-      </div>
+    <div className="flex flex-col items-center p-6 border rounded-lg shadow-md bg-white hover:shadow-lg transition duration-300">
+      <Image src={icon} alt={title} width={80} height={80} />
+      <h3 className="text-xl font-semibold mt-4">{title}</h3>
+      <p className="text-gray-600 text-center mt-2">{description}</p>
+      <a
+        href={link}
+        className="mt-4 text-green-500 hover:text-sky-700 text-sm font-semibold"
+      >
+        <div className="flex underline">
+          <div>Explore More</div>
+          <div>
+            {" "}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="size-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"
+              />
+            </svg>
+          </div>
+        </div>
+      </a>
     </div>
   );
 };
@@ -31,46 +52,86 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ imageSrc, title, description 
 const ServicesComponent: React.FC = () => {
   const services = [
     {
-      imageSrc: '/Assests/Networking2.jpg',
-      title: 'Networking',
-      description: 'Seamless connectivity, powering your digital future.',
+      icon: "/servies/cp.gif",
+      title: "Cloud Computing",
+      description: "Test ever since the 1500s, when an unknown printer took.",
+      link: "/services/awesome-sections",
     },
     {
-      imageSrc: '/Assests/Cloud3.webp',
-      title: 'Cloud',
-      description: 'Empowering your business with scalable cloud solutions.',
+      icon: "/servies/network.gif",
+      title: "Network and Security",
+      description: "Test ever since the 1500s, when an unknown printer took.",
+      link: "/services/portfolio-options",
     },
     {
-      imageSrc: '/Assests/Security3.jpg',
-      title: 'Security',
-      description: 'Securing your data, protecting your success',
+      icon: "/servies/DataCentre.gif",
+      title: "Data Centre Solutions",
+      description: "Test ever since the 1500s, when an unknown printer took.",
+      link: "/services/retina-ready",
     },
     {
-      imageSrc: '/Assests/Innovation2.jpg',
-      title: 'Innovation',
-      description: 'Driving innovation to unlock new possibilities.',
+      icon: "/servies/cybersecurity.gif",
+      title: "Cyber Security",
+      description: "Test ever since the 1500s, when an unknown printer took.",
+      link: "/services/free-updates",
+    },
+    {
+      icon: "/servies/sofware_licensing.gif",
+      title: "software Licensing",
+      description: "Test ever since the 1500s, when an unknown printer took.",
+      link: "/services/useful-sections",
+    },
+    {
+      icon: "/servies/softwareselling.png",
+      title: "Hardware/Software reselling",
+      description: "Test ever since the 1500s, when an unknown printer took.",
+      link: "/services/blog-options",
+    },
+    {
+      icon: "/servies/software.gif",
+      title: "Software Development",
+      description: "Test ever since the 1500s, when an unknown printer took.",
+      link: "/services/blog-options",
+    }, {
+      icon: "/servies/printingsolution.png",
+      title: "Enterprise Printing Solutions",
+      description: "Test ever since the 1500s, when an unknown printer took.",
+      link: "/services/blog-options",
+    },
+    {
+      icon: "/servies/servicemanaging.gif",
+      title: "Manage Services Provider for Enterprise",
+      description: "Test ever since the 1500s, when an unknown printer took.",
+      link: "/services/blog-options",
     },
   ];
 
   return (
-    <div className="container mx-auto p-6">
-      <h2 className="text-3xl font-bold text-center mb-8">Our Services</h2>
-      <p className="text-lg text-gray-600 mb-4">
-        At BY Technology, we offer a comprehensive range of IT services tailored to meet the diverse needs of modern businesses. 
-        From cloud computing and cybersecurity to custom software development and IT infrastructure management, 
-        we provide innovative solutions designed to drive growth, enhance security, and optimize efficiency. 
-        Our team of experts is dedicated to delivering customized strategies that align with your unique business goals.
+    <div className="bg-[#eef4fa] " >
+    <div className="container  mx-auto py-12  ">
+      <h2 className="text-4xl font-bold text-center mb-2 ">
+        Services We Provide
+      </h2>
+      {/* Sky blue line under the title */}
+      <div className="w-14 h-1 bg-green-500 rounded-full mx-auto mb-7 pb-1.5 "></div>
+
+      <p className="text-center text-gray-700 mb-12 max-w-2xl mx-auto text-xl font-medium ">
+      We offer a wide range of IT services designed to optimize your business operations and secure your infrastructure.
       </p>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+      {/* Service Cards Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {services.map((service, index) => (
           <ServiceCard
             key={index}
-            imageSrc={service.imageSrc}
+            icon={service.icon}
             title={service.title}
             description={service.description}
+            link={service.link}
           />
         ))}
       </div>
+    </div>
     </div>
   );
 };

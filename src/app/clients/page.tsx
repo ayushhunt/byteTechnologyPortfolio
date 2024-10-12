@@ -55,7 +55,7 @@ const Clients = () => {
     },
     {
       name:'lombardi',
-      imageSrc:'/clients/lombardi-socialmedia-preview.png',
+      imageSrc:'/clients/lombardi.png',
       alt:'lombardi'
     }
   ];
