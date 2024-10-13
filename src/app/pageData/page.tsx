@@ -1,6 +1,6 @@
 "use client"
 import { useEffect, useState } from 'react';
-
+import Image from 'next/image';
 interface PageProps {
   title: string;
 }
@@ -39,11 +39,15 @@ const Page: React.FC<PageProps> = ({ title="Sample Title" }) => {
     <div className="flex flex-col items-center justify-center p-8">
       {pageData ? (
         <div className="max-w-lg w-full bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition duration-500">
-          <img
-            src={pageData.image}
-            alt={pageData.title}
-            className="w-full h-64 object-cover hover:opacity-80 transition-opacity duration-500"
-          />
+         <div className="relative w-full h-64">
+            <Image
+              src={pageData.image}
+              alt={pageData.title}
+              layout="fill"
+              objectFit="cover"
+              className="hover:opacity-80 transition-opacity duration-500"
+            />
+          </div>
           <div className="p-6">
             <h1 className="text-3xl font-bold mb-4">{pageData.title}</h1>
             <p className="text-gray-700 mb-6">{pageData.text}</p>
