@@ -1,54 +1,64 @@
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lora:ital,wght@0,400..700;1,400..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
 /* Root element for custom CSS variables */
 :root {
-  --background: #ffffff; /* Background is now set to white */
-  --foreground: #171717;
-  --font-primary: 'Lato', sans-serif;
-  --font-secondary: 'Roboto', sans-serif; /* Text color is dark for contrast on a white background */
+    --background: #ffffff; /* Background is set to white */
+    --foreground: #171717; /* Text color is dark for contrast on a white background */
+    --font-primary: 'Montserrat', sans-serif; /* Primary font */
+    --font-secondary: 'Open Sans', sans-serif; /* Secondary font */
+}
+
+@font-face {
+    font-family: '__montreal';
+    src: url('/fonts/Montreal-Regular.woff') format('woff');
+    
+}
+
+@font-face {
+    font-family: '__montreal';
+    src: url('/fonts/Montreal-Bold.woff') format('woff');
+    
 }
 
 /* Optional dark mode settings based on user's system preference */
 /*@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed; 
-  } 
+    :root {
+        --background: #0a0a0a;
+        --foreground: #ededed; 
+    } 
 } */
 
 /* Applying root colors to the body */
 body {
-  color: var(--foreground); /* Text color from root */
-  background: var(--background); /* Background color from root */
-   /* Fallback fonts for cross-browser compatibility */
-  overflow-x: hidden; /* Prevents horizontal scrolling */
+    color: var(--foreground); /* Text color from root */
+    background: var(--background); /* Background color from root */
+    overflow-x: hidden; /* Prevents horizontal scrolling */
 }
 
 /* Custom utility for balanced text wrapping */
 @layer utilities {
-  .text-balance {
-    text-wrap: balance; /* Enables balanced text wrapping (modern browser support only) */
-  }
+    .text-balance {
+        text-wrap: balance; /* Enables balanced text wrapping (modern browser support only) */
+    }
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .animate-fadeIn {
-  animation: fadeIn 1.2s ease-out;
+    animation: fadeIn 1.2s ease-out;
 }
-
-

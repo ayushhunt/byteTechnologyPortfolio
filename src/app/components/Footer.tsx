@@ -115,7 +115,7 @@ const Footer = () => {
       rel="noopener noreferrer" 
       className="text-blue-500 hover:text-blue-700 transition-colors duration-300 ml-1"
     >
-      Ayush Singh
+      BY technology
     </a>
   </div>
 

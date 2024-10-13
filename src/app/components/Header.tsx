@@ -20,7 +20,7 @@ const Header = () => {
   };
 
   return (
-    <header className={` ${robotoC.className} bg-gradient-to-r from-zinc-200 via-zinc-300 to-zinc-400 p-4 shadow-lg h-13 sticky top-0 z-50`}>
+    <header className={` ${robotoC.className} bg-[#4b5563] p-4 shadow-lg h-13 sticky top-0 z-50`}>
       <div className='flex flex-row justify-between items-center px-6 py-1'>
         {/* Logo Section */}
         <Link href={"/"}>
@@ -36,7 +36,7 @@ const Header = () => {
         </Link>
 
         {/* Navigation Links */}
-        <nav className='hidden md:flex items-center space-x-4 lg:space-x-12 shadow-lg px-8 py-1 text-lg text-white bg-gradient-to-r from-gray-900 via-gray-700 to-gray-600 rounded-full transition-all duration-500 ease-in-out transform hover:shadow-2xl'>
+        <nav className='hidden md:flex items-center space-x-4 lg:space-x-12  px-8 py-1 text-lg text-white  transition-all duration-500 ease-in-out transform hover:shadow-2xl'>
           <Link href={"/"}>
             <div 
               className={`relative cursor-pointer px-3 py-1 flex items-center ${activeTab === "home" ? "bg-gray-700/50 border-b-4 border-cyan-500" : ""} hover:text-cyan-400 hover:bg-gray-700/20 transition-all duration-300 ease-in-out`}
