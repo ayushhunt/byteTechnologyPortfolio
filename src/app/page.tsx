@@ -2,10 +2,10 @@
 import Hero from "./components/Hero";
 import AboutUs from "./components/Aboutus";
 import ServicesComponent from "./components/ServicesComponent";
-import CallToAction from "./components/CallToAction";
+
 import ClientsSection from "./components/ClientsSection";
 import PartnersSection from "./components/PartnersSection";
-import Founders from "./components/Founders";
+
 import WhyChooseUs from "./components/whychooseus";
 import BookCall from "./components/BookaCall";
 

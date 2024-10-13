@@ -1,16 +1,17 @@
-import type { Config } from "tailwindcss";
+import type { Config } from 'tailwindcss';
+import plugin from 'tailwindcss/plugin';
 
 const config: Config = {
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        background: 'var(--background)',
+        foreground: 'var(--foreground)',
       },
       fontFamily: {
         primary: ['var(--font-primary)'],
@@ -24,34 +25,30 @@ const config: Config = {
         },
       },
       animation: {
-        scroll: 'scroll 100s linear infinite', // Slowed down to 30 seconds for smoother scrolling
+        scroll: 'scroll 100s linear infinite',
       },
     },
   },
   plugins: [
-    function ({ addUtilities }) {
+    plugin(function ({ addUtilities }) {
       const newUtilities = {
-        // Perspective for 3D effect
         '.perspective': {
           perspective: '1000px',
         },
-        // Preserve 3D transformations
         '.preserve-3d': {
           transformStyle: 'preserve-3d',
         },
-        // Rotate Y axis by 180 degrees for the flip
         '.rotate-y-180': {
           transform: 'rotateY(180deg)',
         },
-        // Hide backface of the element
         '.backface-hidden': {
           backfaceVisibility: 'hidden',
         },
       };
 
-      // Add these new utilities and allow them to be used in responsive states and on hover
-      addUtilities(newUtilities, ['responsive', 'hover']);
-    },
+      // Directly adding variants without TypeScript type errors
+      addUtilities(newUtilities);
+    }),
   ],
 };
 

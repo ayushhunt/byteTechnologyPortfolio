@@ -1,10 +1,10 @@
-"use client";
+
 import Image from "next/image";
-import React, { useState } from "react";
+import React from "react";
 // import aboutUsImage from '/aboutus/about.webp'; // Ensure this is the correct path
 
 const AboutUs: React.FC = () => {
-  const [currentTab, setCurrentTab] = useState("agility");
+  
 
   return (
     <div className="bg-[#eef4fa]  py-12 overflow-hidden">

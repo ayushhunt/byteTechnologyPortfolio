@@ -2,8 +2,6 @@
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 
-
-
 export default function ContactUs() {
   return (
     <div className="container mx-auto p-8 bg-white rounded-lg shadow-lg">
@@ -33,11 +31,6 @@ export default function ContactUs() {
     </p>
   </div>
 </motion.div>
-
-
-
-
-
       {/* Main Content Section */}
       <div className="bg-gray-50 grid grid-cols-1 md:grid-cols-2 gap-8 mt-10 rounded-3xl shadow-lg p-8">
         
@@ -48,7 +41,7 @@ export default function ContactUs() {
           transition={{ duration: 0.8 }}
           className="bg-orange-500 shadow-lg rounded-3xl p-8"
         >
-          <h2 className="text-4xl font-bold mb-8 text-white transition-transform duration-500 hover:scale-105 font-primary">Let's Talk</h2>
+          <h2 className="text-4xl font-bold mb-8 text-white transition-transform duration-500 hover:scale-105 font-primary">Lets Talk</h2>
           <p className="text-gray-100 mb-8 text-xl font-secondary">
             Fill out the form and our team will get back to you as soon as
             possible.

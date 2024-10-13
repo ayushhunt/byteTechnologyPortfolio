@@ -1,5 +1,3 @@
-// components/HeroSection.js
-
 export default function BookCall() {
     return (
         <div className="bg-[#eef4fa]">
@@ -10,7 +8,7 @@ export default function BookCall() {
   
           {/* Main heading */}
           <div className="text-6xl md:text-6xl font-montreal font-bold text-[#d1d1c7] text-[108.297px] leading-[108.297px] text-center tracking-[-2.70742px]">
-            LET'S MAKE <br />
+            LETS MAKE <br />
             IT HAPPEN
           </div>
   
@@ -46,7 +44,7 @@ export default function BookCall() {
               </span>
               <div className="text-sm">
                 <p>Working Globally</p>
-                <p>Available Oct '24</p>
+                <p>Available Oct 24</p>
               </div>
             </div>
   
