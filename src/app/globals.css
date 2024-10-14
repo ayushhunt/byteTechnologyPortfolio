@@ -16,13 +16,13 @@
 
 @font-face {
     font-family: '__montreal';
-    src: url('/fonts/Montreal-Regular.woff') format('woff');
+    src: url('./fonts/Montreal-Regular.woff') format('woff');
     
 }
 
 @font-face {
     font-family: '__montreal';
-    src: url('/fonts/Montreal-Bold.woff') format('woff');
+    src: url('./fonts/Montreal-Bold.woff') format('woff');
     
 }
 
