@@ -8,6 +8,7 @@ import PartnersSection from "./components/PartnersSection";
 
 import WhyChooseUs from "./components/whychooseus";
 import BookCall from "./components/BookaCall";
+import ScrollToTop from "./components/ScrollToTop";
 
 export default function Home() {
   return (
@@ -31,6 +32,7 @@ export default function Home() {
       {/* Partners Section */}
       <PartnersSection />
 <BookCall></BookCall>
+<ScrollToTop></ScrollToTop>
      
     </div>
   );

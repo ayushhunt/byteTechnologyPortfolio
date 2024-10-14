@@ -32,13 +32,13 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
-              stroke-width="1.5"
+              strokeWidth="1.5"
               stroke="currentColor"
               className="size-6"
             >
               <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"
               />
             </svg>
@@ -54,37 +54,37 @@ const ServicesComponent: React.FC = () => {
     {
       icon: "/servies/cp.gif",
       title: "Cloud Computing",
-      description: "Test ever since the 1500s, when an unknown printer took.",
+      description: "Empower your business with scalable cloud solutions that drive efficiency and growth.",
       link: "/services/awesome-sections",
     },
     {
       icon: "/servies/network.gif",
       title: "Network and Security",
-      description: "Test ever since the 1500s, when an unknown printer took.",
+      description: "Secure your network with advanced monitoring and threat prevention technologies.",
       link: "/services/portfolio-options",
     },
     {
       icon: "/servies/DataCentre.gif",
       title: "Data Centre Solutions",
-      description: "Test ever since the 1500s, when an unknown printer took.",
+      description: "Enhance performance with reliable server, storage, and backup solutions.",
       link: "/services/retina-ready",
     },
     {
       icon: "/servies/cybersecurity.gif",
       title: "Cyber Security",
-      description: "Test ever since the 1500s, when an unknown printer took.",
+      description: "Protect your business with proactive security solutions against evolving threats.",
       link: "/services/free-updates",
     },
     {
       icon: "/servies/sofware_licensing.gif",
       title: "software Licensing",
-      description: "Test ever since the 1500s, when an unknown printer took.",
+      description: "Simplify licensing management with the latest software solutions tailored for you.",
       link: "/services/useful-sections",
     },
     {
       icon: "/servies/softwareselling.png",
       title: "Hardware/Software reselling",
-      description: "Test ever since the 1500s, when an unknown printer took.",
+      description: "Access top IT products with seamless support from trusted vendors..",
       link: "/services/blog-options",
     },
     {
