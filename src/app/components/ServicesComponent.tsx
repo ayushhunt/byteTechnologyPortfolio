@@ -18,8 +18,8 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
   return (
     <div className="flex flex-col items-center p-6 border rounded-lg shadow-md bg-white hover:shadow-lg transition duration-300">
       <Image src={icon} alt={title} width={80} height={80} />
-      <h3 className="text-xl font-semibold mt-4">{title}</h3>
-      <p className="text-gray-600 text-center mt-2">{description}</p>
+      <h3 className="text-2xl font-semibold mt-4 text-center font-secondary">{title}</h3>
+      <p className="text-gray-700 text-center mt-2 font-medium ">{description}</p>
       <a
         href={link}
         className="mt-4 text-green-500 hover:text-sky-700 text-sm font-semibold"
@@ -90,18 +90,18 @@ const ServicesComponent: React.FC = () => {
     {
       icon: "/servies/software.gif",
       title: "Software Development",
-      description: "Test ever since the 1500s, when an unknown printer took.",
+      description: "Build custom, scalable software solutions tailored to meet your business goals.",
       link: "/services/blog-options",
     }, {
       icon: "/servies/printingsolution.png",
       title: "Enterprise Printing Solutions",
-      description: "Test ever since the 1500s, when an unknown printer took.",
+      description: "Optimize printing with managed services that reduce costs and improve efficiency.",
       link: "/services/blog-options",
     },
     {
       icon: "/servies/servicemanaging.gif",
       title: "Manage Services Provider for Enterprise",
-      description: "Test ever since the 1500s, when an unknown printer took.",
+      description: "Ensure smooth operations with proactive monitoring and 24/7 IT support.",
       link: "/services/blog-options",
     },
   ];

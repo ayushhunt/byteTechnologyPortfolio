@@ -25,6 +25,13 @@
     src: url('./fonts/Montreal-Bold.woff') format('woff');
     
 }
+@font-face {
+    font-family: 'Mona Sans';
+    src:
+      url('./fonts/Mona-Sans.woff2') format('woff2');
+     
+    
+}
 
 /* Optional dark mode settings based on user's system preference */
 /*@media (prefers-color-scheme: dark) {

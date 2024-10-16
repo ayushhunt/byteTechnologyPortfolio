@@ -1,97 +1,119 @@
-import React from 'react';
-import { FaCloud, FaShieldAlt, FaEthernet, FaShoppingCart } from 'react-icons/fa';
-import { AiOutlinePrinter, AiOutlineDatabase, AiFillCode } from 'react-icons/ai';
-import { MdSettings } from 'react-icons/md';
-import { SiAdobe } from 'react-icons/si';
+"use client"
+import { useState } from 'react';
 
-const servicesData = {
-  title: "Our Services",
-  description: "At BY Technology, we offer a wide range of IT solutions designed to help businesses thrive in the digital age. From cloud computing to cybersecurity, our services cater to diverse needs with a focus on innovation and client success.",
-  categories: [
-    {
-      name: "Cloud Computing",
-      description: "Flexible and scalable cloud solutions tailored to your business needs.",
-      icon: FaCloud, // Use the actual icon component
-    },
-    {
-      name: "Network and Security",
-      description: "Reliable network setup and robust security measures for business continuity.",
-      icon: FaEthernet,
-    },
-    {
-      name: "Data Centre – Servers/Storage/Networks/Power",
-      description: "Optimize your data center infrastructure for enhanced performance and reliability.",
-      icon: AiOutlineDatabase,
-    },
-    {
-      name: "Cyber Security",
-      description: "Comprehensive protection against cyber threats with proactive defense mechanisms.",
-      icon: FaShieldAlt,
-    },
-    {
-      name: "Software Development",
-      description: "Custom software solutions that meet your unique business challenges.",
-      icon: AiFillCode,
-    },
-    {
-      name: "Manage Services Provider for Enterprise",
-      description: "End-to-end IT support and management services for enterprise clients.",
-      icon: MdSettings,
-    },
-    {
-      name: "Active and Passive Networking",
-      description: "Complete networking solutions, from active network components to passive cabling.",
-      icon: FaEthernet,
-    },
-    {
-      name: "Software Licensing",
-      description: "Authorized reseller of software licenses from top vendors like Microsoft, Adobe, and more.",
-      icon: SiAdobe,
-    },
-    {
-      name: "Enterprise Printing Solutions",
-      description: "Advanced printing solutions to streamline your enterprise's printing needs.",
-      icon: AiOutlinePrinter,
-    },
-    {
-      name: "Reselling of All Kinds of Hardware/Software",
-      description: "Supplying a range of hardware and software from trusted vendors, tailored to your needs.",
-      icon: FaShoppingCart,
-    },
-  ],
-};
+interface Service {
+  id: number;
+  title: string;
+  details: string;
+  image: string;
+}
 
-const Services = () => {
+interface SubService {
+  id: number;
+  sub: string;
+}
+
+const Services: React.FC = () => {
+  const [selectedService, setSelectedService] = useState<Service | null>(null);
+  const [subServiceIndex, setSubServiceIndex] = useState(0);
+
+  const services: Service[] = [
+   
+    { id: 1, title: 'Web Publishing/Localisation', details: 'Details about Web Publishing', image: '/path-to-image1' },
+    { id: 6, title: 'E-commerce Integrations', details: 'Details about E-commerce Integrations', image: '/path-to-image6' },
+   
+    { id: 2, title: 'Quality Assurance', details: 'Details about Quality Assurance', image: '/path-to-image2' },
+    { id: 7, title: 'Front-End Web & Mobile App Development', details: 'Front-end web development is the practice of converting data to a graphical interface, through HTML, CSS, and JavaScript.', image: '/path-to-image7' },
+    { id: 3, title: 'Process Automation', details: 'Details about Process Automation', image: '/path-to-image3' },
+    
+    { id: 8, title: 'Content Automation', details: 'Details about Content Automation', image: '/path-to-image8' },
+    { id: 4, title: 'Search Engine Optimisation (SEO)', details: 'Details about SEO', image: '/path-to-image4' },
+   
+   
+    { id: 9, title: 'Digital Solution Development', details: 'Details about Digital Solutions', image: '/path-to-image9' },
+   
+    { id: 5, title: 'Content Management', details: 'Details about Content Management', image: '/path-to-image5' },
+  ];
+
+  const subServices: SubService[] = [
+    { id: 1, sub: 'E-commerce Integrations' },
+    { id: 2, sub: 'Content Automation' },
+  ];
+
+  const handleServiceClick = (service: Service) => {
+    setSelectedService(service);
+  };
+
+  const handleNextSubService = () => {
+    setSubServiceIndex((prevIndex) => (prevIndex + 1) % subServices.length);
+  };
+
+  const handlePrevSubService = () => {
+    setSubServiceIndex((prevIndex) => (prevIndex - 1 + subServices.length) % subServices.length);
+  };
+
   return (
-    <div className="min-h-screen py-10 bg-cover bg-center bg-no-repeat">
-      {/* Title and Description */}
-      <h1 className="text-4xl font-bold text-center mb-12 text-gray-800">
-        {servicesData.title}
-      </h1>
-      <p className="text-center text-gray-600 max-w-3xl mx-auto mb-12">
-        {servicesData.description}
-      </p>
-  
-      {/* Grid layout for cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-5">
-        {servicesData.categories.map((category, index) => (
-          <div
-            key={index}
-            className="bg-white shadow-lg rounded-lg p-6 transform transition-transform hover:scale-105 hover:shadow-2xl duration-300 cursor-pointer"
-          >
-            <div className="text-6xl text-indigo-500 mb-4">
-              <category.icon /> {/* Render the actual icon component */}
+    <div className="flex flex-col md:flex-row  bg-gray-200 h-screen overflow-hidden">
+      {/* Left Section */}
+      <div className="w-full md:w-1/3 p-8  mt-20 ml-10 ">
+        <h1 className="text-4xl font-bold ">Services</h1>
+        <p className="mt-9 text-gray-600">
+          We provide multiple services from digital production to technology services.
+        </p>
+      </div>
+
+      {/* Middle Section: Service List (2 Columns) */}
+      <div className="w-full md:w-1/3 p-8 bg-gray-200 overflow-y-auto">
+        <ul className="grid grid-cols-2 gap-6 text-lg">
+          {services.map((service) => (
+            <li
+              key={service.id}
+              className={`cursor-pointer text-lg ${
+                selectedService?.id === service.id ? 'font-bold text-black' : 'text-gray-600'
+              }`}
+              onClick={() => handleServiceClick(service)}
+            >
+              {`${service.id.toString().padStart(2, '0')} ${service.title}`}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* Right Section: Details with Image, Heading, Description, and Arrows */}
+      <div className="w-full md:w-1/3 p-8 bg-teal-500 text-white flex flex-col justify-between">
+        {selectedService ? (
+          <>
+            <div className="flex flex-col items-center">
+              {/* Placeholder for the icon/image */}
+              <img src={selectedService.image} alt={selectedService.title} className="w-16 h-16 mb-4" />
+
+              <h3 className="text-2xl font-bold">{selectedService.title}</h3>
+              <p className="mt-4 text-center">{selectedService.details}</p>
             </div>
-            <h2 className="text-2xl font-semibold text-gray-800 mb-3">
-              {category.name}
-            </h2>
-            <p className="text-gray-600 mb-4">{category.description}</p>
-          </div>
-        ))}
+
+            {/* Arrows and Sub-services */}
+            <div className="flex justify-between mt-8 self-center w-full">
+              <button
+                className="bg-white text-teal-500 p-2 rounded-full"
+                onClick={handlePrevSubService}
+              >
+                ←
+              </button>
+              <span>{subServices[subServiceIndex].sub}</span>
+              <button
+                className="bg-white text-teal-500 p-2 rounded-full"
+                onClick={handleNextSubService}
+              >
+                →
+              </button>
+            </div>
+          </>
+        ) : (
+          <p>Select a service to see details</p>
+        )}
       </div>
     </div>
   );
-  
 };
 
 export default Services;
