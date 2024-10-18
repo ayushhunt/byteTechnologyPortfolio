@@ -1,96 +1,193 @@
-import React from 'react';
-import { FaAws,  FaGoogle, } from 'react-icons/fa';
-import { SiAzuredevops, SiFortinet, SiZoho, SiAutodesk, SiLenovo, SiSynology } from 'react-icons/si';
-import { MdSecurity } from 'react-icons/md';
 
-const Partners = () => {
-  const partners = [
-    {
-      name: 'AWS',
-      description: 'Leading cloud platform offering scalable computing solutions.',
-      icon: <FaAws className="text-yellow-500 text-6xl" />,
-    },
-    {
-      name: 'Microsoft Azure',
-      description: 'Comprehensive cloud computing services by Microsoft.',
-      icon: <SiAzuredevops className="text-blue-600 text-6xl" />,
-    },
-    {
-      name: 'Google Cloud',
-      description: 'Powerful cloud services and infrastructure by Google.',
-      icon: <FaGoogle className="text-red-500 text-6xl" />,
-    },
-    // {
-    //   name: 'Cisco',
-    //   description: 'Leading provider of networking hardware and software.',
-    //   icon: <FaCisco className="text-blue-600 text-6xl" />,
-    // },
-    // {
-    //   name: 'Juniper Networks',
-    //   description: 'Advanced network solutions for enterprise-level security.',
-    //   icon: <SiJuniper className="text-green-500 text-6xl" />,
-    // },
-    {
-      name: 'Fortinet',
-      description: 'Security-driven networking solutions for protection at scale.',
-      icon: <SiFortinet className="text-red-600 text-6xl" />,
-    },
-    {
-      name: 'Sophos',
-      description: 'Next-gen cybersecurity for protection and risk management.',
-      icon: <MdSecurity className="text-purple-600 text-6xl" />,
-    },
-    // {
-    //   name: 'Adobe',
-    //   description: 'Industry-leading creative software for designers and businesses.',
-    //   icon: <FaAdobe className="text-red-500 text-6xl" />,
-    // },
-    {
-      name: 'Autodesk',
-      description: 'Software for architecture, engineering, and construction.',
-      icon: <SiAutodesk className="text-teal-500 text-6xl" />,
-    },
-    {
-      name: 'ZOHO',
-      description: 'Cloud software suite for CRM, productivity, and business operations.',
-      icon: <SiZoho className="text-red-500 text-6xl" />,
-    },
-    // {
-    //   name: 'Dell',
-    //   description: 'World-class hardware solutions for enterprises.',
-    //   icon: <FaDell className="text-blue-600 text-6xl" />,
-    // },
-    {
-      name: 'Lenovo',
-      description: 'Innovative hardware for business and personal use.',
-      icon: <SiLenovo className="text-red-500 text-6xl" />,
-    },
-    {
-      name: 'Synology',
-      description: 'Data storage solutions and NAS hardware for enterprises.',
-      icon: <SiSynology className="text-gray-600 text-6xl" />,
-    },
-  ];
+"use client"
+
+import { useState, useEffect } from 'react'
+import { motion } from 'framer-motion'
+import { ChevronDown, ChevronUp } from 'lucide-react'
+import Image from 'next/image'
+
+
+// Button component
+const Button = ({ children, variant = 'default', size = 'default', className = '', ...props }) => {
+  const baseStyles = 'inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background'
+  const variantStyles = {
+    default: 'bg-primary text-primary-foreground hover:bg-primary/90',
+    ghost: 'hover:bg-accent hover:text-accent-foreground',
+  }
+  const sizeStyles = {
+    default: 'h-10 py-2 px-4',
+    sm: 'h-9 px-3 rounded-md',
+  }
+  
+  return (
+    <button
+      className={`${baseStyles} ${variantStyles[variant]} ${sizeStyles[size]} ${className}`}
+      {...props}
+    >
+      {children}
+    </button>
+  )
+}
+
+// Card components
+const Card = ({ className, ...props }) => (
+  <div className={`rounded-lg border bg-card text-card-foreground shadow-sm ${className}`} {...props} />
+)
+
+const CardHeader = ({ className, ...props }) => (
+  <div className={`flex flex-col space-y-1.5 p-6 ${className}`} {...props} />
+)
+
+const CardTitle = ({ className, ...props }) => (
+  <h3 className={`text-2xl font-semibold leading-none tracking-tight ${className}`} {...props} />
+)
+
+const CardDescription = ({ className, ...props }) => (
+  <p className={`text-sm text-muted-foreground ${className}`} {...props} />
+)
+
+const CardContent = ({ className, ...props }) => (
+  <div className={`p-6 pt-0 ${className}`} {...props} />
+)
+
+const partners = {
+  Network: ['HPE', 'Aruba', 'Juniper', 'Cisco', 'Sophos'],
+  Security: ['Sophos', 'Fortinet', 'CheckPoint', 'PalloAlto', 'BeyondTrust', 'Baracuda', 'MimeCast', 'Crowd Strike', 'TrendMicro'],
+  Software: ['Microsoft', 'Adobe', 'Freshwork', 'Autodesk', 'ZOHO', 'Nitro', 'AxisVM', 'Hexagon'],
+  Cloud: ['AWS', 'Azure', 'Google', 'I2K2 Networks'],
+  'Servers/Storage': ['HPE', 'DELL', 'Lenovo', 'Synology', 'QNAP', 'NetAPP', 'EMC Dell']
+}
+
+const imageFormats = ['png', 'jpg', 'webp']
+
+
+export default function PartnerPage() {
+  const [expandedCategory, setExpandedCategory] = useState<string | null>(null)
+  const [imageErrors, setImageErrors] = useState<Record<string, boolean>>({})
+  const [imageSources, setImageSources] = useState<Record<string, string>>({})
+
+  useEffect(() => {
+    const preloadImages = async () => {
+      const errors: Record<string, boolean> = {}
+      const sources: Record<string, string> = {}
+      for (const companyList of Object.values(partners)) {
+        for (const company of companyList) {
+          let imageLoaded = false
+          for (const format of imageFormats) {
+            if (imageLoaded) break
+            const imgSrc = `/ourpartners/${company.toLowerCase().replace(/\s+/g, '-')}.${format}`
+            try {
+              await new Promise((resolve, reject) => {
+                const img = new window.Image()
+                img.onload = resolve
+                img.onerror = reject
+                img.src = imgSrc
+              })
+              imageLoaded = true
+              sources[company] = imgSrc
+            } catch (error) {
+              
+            }
+          }
+          if (!imageLoaded) {
+            errors[company] = true
+          }
+        }
+      }
+      setImageErrors(errors)
+      setImageSources(sources)
+    }
+    preloadImages()
+  }, [])
+
+  const toggleCategory = (category: string) => {
+    setExpandedCategory(expandedCategory === category ? null : category)
+  }
 
   return (
-    <div className="min-h-screen bg-gray-50 py-10">
-      <h1 className="text-4xl font-bold text-center mb-10 text-gray-800">Our Partners</h1>
-      <div className="flex flex-wrap justify-center gap-8 px-5">
-        {partners.map((partner, index) => (
-          <div
-            key={index}
-            className="group bg-white shadow-lg rounded-lg p-6 max-w-sm hover:shadow-2xl transform hover:-translate-y-3 transition duration-300 ease-in-out cursor-pointer"
-          >
-            <div className="flex justify-center mb-5">{partner.icon}</div>
-            <h2 className="text-2xl font-semibold text-center text-gray-800 group-hover:text-indigo-600 transition duration-300">
-              {partner.name}
-            </h2>
-            <p className="text-center text-gray-600 mt-3">{partner.description}</p>
-          </div>
-        ))}
+    <div className="min-h-screen bg-gray-900 text-gray-100 py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <h1 className="text-4xl font-bold text-center mb-2">Our Partners alliances</h1>
+          <p className="text-xl text-center text-gray-400 mb-12">
+            Empowering businesses with cutting-edge solutions through strategic alliances
+          </p>
+        </motion.div>
+
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {Object.entries(partners).map(([category, companies], index) => (
+            <motion.div
+              key={category}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+            >
+              <Card className="h-full bg-gray-800 border-gray-700">
+                <CardHeader>
+                  <CardTitle className="flex justify-between items-center text-gray-100">
+                    <span>{category}</span>
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      onClick={() => toggleCategory(category)}
+                      className="text-gray-100 hover:text-gray-300"
+                    >
+                      {expandedCategory === category ? <ChevronUp /> : <ChevronDown />}
+                    </Button>
+                  </CardTitle>
+                  <CardDescription className="text-gray-400">
+                    {companies.length} trusted partners
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <motion.div
+                    initial={false}
+                    animate={{ height: expandedCategory === category ? 'auto' : 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="overflow-hidden"
+                  >
+                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                      {companies.map((company) => (
+                        <motion.div
+                          key={company}
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          transition={{ duration: 0.3 }}
+                          className="flex flex-col items-center"
+                        >
+                          <div className="w-24 h-24 relative mb-2">
+                            {!imageErrors[company] && imageSources[company] ? (
+                              <Image
+                                src={imageSources[company]}
+                                alt={`${company} logo`}
+                                width={96}
+                                height={96}
+                                objectFit="contain"
+                                className="rounded-lg bg-white p-2"
+                              />
+                            ) : (
+                              <div className="w-full h-full flex items-center justify-center bg-gray-700 rounded-lg">
+                                <span className="text-2xl font-bold text-gray-300">
+                                  {company.charAt(0)}
+                                </span>
+                              </div>
+                            )}
+                          </div>
+                          <span className="text-normal text-center text-gray-300 ">{company}</span>
+                        </motion.div>
+                      ))}
+                    </div>
+                  </motion.div>
+                </CardContent>
+              </Card>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </div>
-  );
-};
-
-export default Partners;
+  )
+}

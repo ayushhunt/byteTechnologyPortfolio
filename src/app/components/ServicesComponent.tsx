@@ -18,8 +18,8 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
   return (
     <div className="flex flex-col items-center p-6 border rounded-lg shadow-md bg-white hover:shadow-lg transition duration-300">
       <Image src={icon} alt={title} width={80} height={80} />
-      <h3 className="text-xl font-semibold mt-4">{title}</h3>
-      <p className="text-gray-600 text-center mt-2">{description}</p>
+      <h3 className="text-2xl font-semibold mt-4 text-center font-secondary">{title}</h3>
+      <p className="text-gray-700 text-center mt-2 font-medium ">{description}</p>
       <a
         href={link}
         className="mt-4 text-green-500 hover:text-sky-700 text-sm font-semibold"
@@ -32,13 +32,13 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
-              stroke-width="1.5"
+              strokeWidth="1.5"
               stroke="currentColor"
               className="size-6"
             >
               <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"
               />
             </svg>
@@ -54,55 +54,55 @@ const ServicesComponent: React.FC = () => {
     {
       icon: "/servies/cp.gif",
       title: "Cloud Computing",
-      description: "Test ever since the 1500s, when an unknown printer took.",
-      link: "/services/awesome-sections",
+      description: "Empower your business with scalable cloud solutions that drive efficiency and growth.",
+      link: "/services",
     },
     {
       icon: "/servies/network.gif",
       title: "Network and Security",
-      description: "Test ever since the 1500s, when an unknown printer took.",
-      link: "/services/portfolio-options",
+      description: "Secure your network with advanced monitoring and threat prevention technologies.",
+      link: "/services",
     },
     {
       icon: "/servies/DataCentre.gif",
       title: "Data Centre Solutions",
-      description: "Test ever since the 1500s, when an unknown printer took.",
-      link: "/services/retina-ready",
+      description: "Enhance performance with reliable server, storage, and backup solutions.",
+      link: "/services",
     },
     {
       icon: "/servies/cybersecurity.gif",
       title: "Cyber Security",
-      description: "Test ever since the 1500s, when an unknown printer took.",
-      link: "/services/free-updates",
+      description: "Protect your business with proactive security solutions against evolving threats.",
+      link: "/services",
     },
     {
       icon: "/servies/sofware_licensing.gif",
       title: "software Licensing",
-      description: "Test ever since the 1500s, when an unknown printer took.",
-      link: "/services/useful-sections",
+      description: "Simplify licensing management with the latest software solutions tailored for you.",
+      link: "/services",
     },
     {
       icon: "/servies/softwareselling.png",
       title: "Hardware/Software reselling",
-      description: "Test ever since the 1500s, when an unknown printer took.",
-      link: "/services/blog-options",
+      description: "Access top IT products with seamless support from trusted vendors..",
+      link: "/services",
     },
     {
       icon: "/servies/software.gif",
       title: "Software Development",
-      description: "Test ever since the 1500s, when an unknown printer took.",
-      link: "/services/blog-options",
+      description: "Build custom, scalable software solutions tailored to meet your business goals.",
+      link: "/services",
     }, {
       icon: "/servies/printingsolution.png",
       title: "Enterprise Printing Solutions",
-      description: "Test ever since the 1500s, when an unknown printer took.",
-      link: "/services/blog-options",
+      description: "Optimize printing with managed services that reduce costs and improve efficiency.",
+      link: "/services",
     },
     {
       icon: "/servies/servicemanaging.gif",
       title: "Manage Services Provider for Enterprise",
-      description: "Test ever since the 1500s, when an unknown printer took.",
-      link: "/services/blog-options",
+      description: "Ensure smooth operations with proactive monitoring and 24/7 IT support.",
+      link: "/services",
     },
   ];
 
