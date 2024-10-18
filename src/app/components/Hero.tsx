@@ -44,14 +44,14 @@ interface HeroSection {
 
 const heroSections: HeroSection[] = [
   {
-    title: "Convert unique ideas into Reality",
-    description: "We allow your IT infrastructure to seamlessly interact with clients, employees, suppliers, media and management.",
+    title: "Empower Businesses with Cloud Technology",
+    description: "Migrate, manage, and optimize your operations in the cloud for enhanced flexibility, performance, and security.",
     imageSrc: "/Assests/image1hero.jpg",
     link: "/convert-ideas"
   },
   {
-    title: "Innovate with Cutting-Edge Solutions",
-    description: "Leverage our expertise to build scalable and efficient software applications tailored to your business needs.",
+    title: "Secure Your Digital Assets, 24/7",
+    description: "Safeguard your critical data and networks with proactive, multi-layered security solutions designed to protect against ever-evolving cyber threats.",
     imageSrc: "/Assests/image2hero.jpg",
     link: "/innovate"
   },
@@ -62,8 +62,8 @@ const heroSections: HeroSection[] = [
     link: "/transform"
   },
   {
-    title: "Accelerate Your Business Growth",
-    description: "Unlock new opportunities and drive success with our innovative software development services.",
+    title: "Simplify IT Operations with Managed Services",
+    description: "Experience seamless operations with 24/7 monitoring, proactive support, and customized IT solutions designed to reduce downtime and boost productivity.",
     imageSrc: "/Assests/image4hero.jpg",
     link: "/accelerate"
   },
@@ -143,7 +143,7 @@ export default function Hero() {
             <p className="text-lg sm:text-xl md:text-2xl text-white mb-8">
               {currentHero.description}
             </p>
-            <Link href={currentHero.link} passHref>
+            <Link href={'/services'}>
               <Button className="bg-white text-black hover:bg-gray-200 text-lg px-6 py-3">
                 Learn More
               </Button>

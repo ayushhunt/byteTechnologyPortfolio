@@ -1,92 +1,134 @@
-import React from 'react';
-import Image from 'next/image';
+'use client'
 
-const Clients = () => {
-  const clients = [
-    {
-      name: 'Esme ',
-      imageSrc: '/clients/esme.jpeg.jpg', // Replace with the actual image path
-      alt: 'esmeLogo',
-    },
-    {
-      name: 'Artivatic Ai',
-      imageSrc: '/clients/artivatic.png', // Replace with the actual image path
-      alt: 'Artivaticlogo',
-    },
-    {
-      name: 'HLS Global',
-      imageSrc: '/clients/hls global.png', // Replace with the actual image path
-      alt: 'HLSglobal',
-    },
-    {
-      name: 'Asahi India Glass',
-      imageSrc: '/clients/asahi_india_glass_limited_logo.jpeg.jpg', // Replace with the actual image path
-      alt: 'ashailogo',
-    },
-    {
-      name: 'GodFrey Phillips',
-      imageSrc: '/clients/godfrey phillips.png', // Replace with the actual image path
-      alt: 'godfreylogo',
-    },
-    {
-      name:'RenewBuy',
-      imageSrc:'/clients/renewbuy.png',
-      alt:'renewbuy'
-    },
-    {
-      name:'Leixir Dental',
-      imageSrc:'/clients/leixir dental.png',
-      alt:'leixirdental'
-    },
-    {
-      name:'Industry Buying',
-      imageSrc:'/clients/industry buying.jpeg.jpg',
-      alt:'industrybuyring'
-    },
-    {
-      name:'RSM Astute',
-      imageSrc:'/clients/logo@2x.webp',
-      alt:'rsm'
-    },
-    {
-      name:'samara capital',
-      imageSrc:'/clients/samara capital.png',
-      alt:'samara'
-    },
-    {
-      name:'lombardi',
-      imageSrc:'/clients/lombardi.png',
-      alt:'lombardi'
+import React, { useState, useEffect } from 'react'
+import { Star, ChevronLeft, ChevronRight } from "lucide-react"
+
+const clients = [
+  { name: "RSM Astute", image: "/clients/logo@2x.webp" },
+  { name: "Suresh Surana & Company", image: "/clients/lombardi.png" },
+  { name: "Lombardi Engineering India Pvt", image: "/clients/lombardi.png" },
+  { name: "Leixir Resources Pvt", image: "/clients/leixir dental.png" },
+  { name: "God Frey Phillips Enterprise Pvt Ltd", image: "/clients/godfrey phillips.png" },
+  { name: "Samara Capital", image: "/clients/samara capital.png" },
+  { name: "ESME Consumer Pvt Ltd", image: "/clients/esme.jpg" },
+  { name: "HLS Global India", image: "/clients/hls global.png" },
+  { name: "Industry buying", image: "/clients/industry buying.jpg" },
+  { name: "RenewBuy.com", image: "/clients/renewbuy.png" },
+  { name: "Artivic AI", image: "/clients/artivatic.png" },
+  { name: "AIS Glass Xpert", image: "/clients/ais.jpg" },
+]
+
+const styles = `
+  @keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+  }
+  .float {
+    animation: float 6s ease-in-out infinite;
+  }
+  @keyframes twinkle {
+    0% { opacity: 0.5; }
+    50% { opacity: 1; }
+    100% { opacity: 0.5; }
+  }
+  .twinkle {
+    animation: twinkle 2s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }
+  .pulse {
+    animation: pulse 4s ease-in-out infinite;
+  }
+`;
+
+export default function ClientsPage() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isHovering, setIsHovering] = useState(false);
+
+  const nextSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % clients.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + clients.length) % clients.length);
+  };
+
+  useEffect(() => {
+    if (!isHovering) {
+      const timer = setInterval(() => {
+        nextSlide();
+      }, 5000);
+      return () => clearInterval(timer);
     }
-  ];
+  }, [isHovering]);
 
   return (
-    <div className="min-h-screen bg-gray-100 py-10">
-      <h1 className="text-4xl font-bold text-center mb-10 text-gray-800">Our Clients</h1>
-      <div className="flex flex-wrap justify-center gap-8 px-5">
-        {clients.map((client, index) => (
-          <div
-            key={index}
-            className="group bg-white shadow-lg rounded-lg p-6 max-w-sm hover:shadow-2xl transform hover:-translate-y-3 transition duration-300 ease-in-out cursor-pointer"
+    <div className="min-h-screen bg-gray-900 text-gray-100 p-4 sm:p-6 lg:p-8 relative overflow-hidden">
+      <style>{styles}</style>
+      <div className="max-w-7xl mx-auto relative z-10">
+        <div className="text-center mb-12">
+          <h1 className="text-5xl font-bold text-purple-400 mb-4">Our Esteemed Clients</h1>
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+            We're proud to work with some of the most innovative companies in the industry.
+          </p>
+        </div>
+        
+        <div className="relative">
+          <div 
+            className="overflow-hidden rounded-2xl shadow-2xl bg-gray-800 p-8"
+            onMouseEnter={() => setIsHovering(true)}
+            onMouseLeave={() => setIsHovering(false)}
           >
-            <div className="flex justify-center items-center mb-5" 
-              style={{ height: '150px',width:'200px' }}>
-              <Image
-                src={client.imageSrc}
-                alt={client.alt}
-                width={150} // Set fixed width
-                height={150} // Set fixed height
-                className="object-contain"
+            <div className="flex items-center justify-center h-80">
+              <div className="w-full max-w-md relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full filter blur-3xl opacity-20 pulse"></div>
+                <div className="relative bg-gray-700 rounded-2xl p-6 flex flex-col items-center justify-center h-full">
+                  <img 
+                    src={clients[currentIndex].image} 
+                    alt={clients[currentIndex].name} 
+                    className="max-w-full max-h-40 object-contain mb-4 filter invert"
+                  />
+                  <h2 className="text-2xl font-semibold text-purple-400 mt-4">{clients[currentIndex].name}</h2>
+                </div>
+              </div>
+            </div>
+            <div className="flex justify-between mt-4">
+              <button onClick={prevSlide} className="p-2 rounded-full bg-purple-600 hover:bg-purple-700 transition-colors">
+                <ChevronLeft className="w-6 h-6" />
+              </button>
+              <button onClick={nextSlide} className="p-2 rounded-full bg-purple-600 hover:bg-purple-700 transition-colors">
+                <ChevronRight className="w-6 h-6" />
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <div className="mt-12 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8">
+          {clients.map((client, index) => (
+            <div key={index} className="bg-gray-800 rounded-xl p-4 flex items-center justify-center hover:shadow-purple-500/20 transition-shadow duration-300">
+              <img 
+                src={client.image} 
+                alt={client.name} 
+                className="max-w-full max-h-16 object-contain filter invert"
               />
             </div>
-            <h2 className="text-2xl font-semibold text-center text-gray-800 group-hover:text-indigo-600 transition duration-300">
-              {client.name}
-            </h2>
-          </div>
-        ))}
+          ))}
+        </div>
+      </div>
+      
+      <div className="absolute top-10 left-10 opacity-50 float">
+        <Star className="h-8 w-8 text-purple-400" />
+      </div>
+      <div className="absolute top-1/4 right-10 opacity-50 float" style={{animationDelay: '2s'}}>
+        <Star className="h-6 w-6 text-blue-400" />
+      </div>
+      <div className="absolute bottom-10 left-1/4 opacity-50 float" style={{animationDelay: '4s'}}>
+        <Star className="h-10 w-10 text-yellow-400" />
       </div>
     </div>
-  );
-};
-
-export default Clients;
+  )
+}
