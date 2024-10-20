@@ -1,8 +1,10 @@
+"use client"
 import React from 'react';
 import { FaCloud, FaShieldAlt, FaEthernet, FaShoppingCart } from 'react-icons/fa';
 import { AiOutlinePrinter, AiOutlineDatabase, AiFillCode } from 'react-icons/ai';
 import { MdSettings } from 'react-icons/md';
 import { SiAdobe } from 'react-icons/si';
+import { useRouter } from 'next/navigation';
 
 const servicesData = {
   title: "Our Services",
@@ -62,6 +64,12 @@ const servicesData = {
 };
 
 const Services = () => {
+  const router = useRouter();
+
+  const handleReadMore = (categoryName: string) => {
+    // Navigate to the dynamic route with the service title
+    router.push(`/services/${categoryName}`);
+  };
   return (
     <div className="min-h-screen py-10 bg-cover bg-center bg-no-repeat">
       {/* Title and Description */}
@@ -86,6 +94,12 @@ const Services = () => {
               {category.name}
             </h2>
             <p className="text-gray-600 mb-4">{category.description}</p>
+            <button
+              onClick={() => handleReadMore(category.name)} // Pass the category name to handleClick
+              className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-300"
+            >
+              Read More
+            </button>
           </div>
         ))}
       </div>

@@ -11,7 +11,7 @@ interface PageData {
   text: string;
 }
 
-const Page: React.FC<PageProps> = ({ title="Sample Title" }) => {
+const Page: React.FC<PageProps> = ({ title }) => {
   const [pageData, setPageData] = useState<PageData | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
 

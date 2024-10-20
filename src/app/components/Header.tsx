@@ -47,7 +47,7 @@ const Header = () => {
             </div>
           </Link>
 
-          <Link href={"/services"}>
+          <Link href={"/pages/services"}>
             <div 
               className={`relative cursor-pointer px-3 py-1 flex items-center ${activeTab === "services" ? "bg-gray-700/50 border-b-4 border-cyan-500" : ""} hover:text-cyan-400 hover:bg-gray-700/20 transition-all duration-300 ease-in-out`}
               onClick={() => setActiveTab("services")}
@@ -57,7 +57,7 @@ const Header = () => {
             </div>
           </Link>
 
-          <Link href={"/clients"}>
+          <Link href={"/pages/clients"}>
             <div 
               className={`relative cursor-pointer px-3 py-1 flex items-center ${activeTab === "clients" ? "bg-gray-700/50 border-b-4 border-cyan-500" : ""} hover:text-cyan-400 hover:bg-gray-700/20 transition-all duration-300 ease-in-out`}
               onClick={() => setActiveTab("clients")}
@@ -67,7 +67,7 @@ const Header = () => {
             </div>
           </Link>
 
-          <Link href={"/partners"}>
+          <Link href={"/pages/partners"}>
             <div 
               className={`relative cursor-pointer px-3 py-1 flex items-center ${activeTab === "partners" ? "bg-gray-700/50 border-b-4 border-cyan-500" : ""} hover:text-cyan-400 hover:bg-gray-700/20 transition-all duration-300 ease-in-out`}
               onClick={() => setActiveTab("partners")}
@@ -77,7 +77,7 @@ const Header = () => {
             </div>
           </Link>
 
-          <Link href={"/contactus"}>
+          <Link href={"/pages/contactus"}>
             <div 
               className={`relative cursor-pointer px-3 py-1 flex items-center ${activeTab === "contactus" ? "bg-gray-700/50 border-b-4 border-cyan-500" : ""} hover:text-cyan-400 hover:bg-gray-700/20 transition-all duration-300 ease-in-out`}
               onClick={() => setActiveTab("contactus")}
@@ -111,16 +111,16 @@ const Header = () => {
             <Link href={"/"} onClick={() => { setActiveTab("home"); toggleMenu(); }} className={`flex items-center hover:text-cyan-500 ${activeTab === "home" ? "text-cyan-500" : ""}`}>
               <FaHome className='mr-2' /> Home
             </Link>
-            <Link href={"/services"} onClick={() => { setActiveTab("services"); toggleMenu(); }} className={`flex items-center hover:text-cyan-500 ${activeTab === "services" ? "text-cyan-500" : ""}`}>
+            <Link href={"/pages/services"} onClick={() => { setActiveTab("services"); toggleMenu(); }} className={`flex items-center hover:text-cyan-500 ${activeTab === "services" ? "text-cyan-500" : ""}`}>
               <FaServicestack className='mr-2' /> Services
             </Link>
-            <Link href={"/clients"} onClick={() => { setActiveTab("clients"); toggleMenu(); }} className={`flex items-center hover:text-cyan-500 ${activeTab === "clients" ? "text-cyan-500" : ""}`}>
+            <Link href={"/pages/clients"} onClick={() => { setActiveTab("clients"); toggleMenu(); }} className={`flex items-center hover:text-cyan-500 ${activeTab === "clients" ? "text-cyan-500" : ""}`}>
               <FaUsers className='mr-2' /> Clients
             </Link>
-            <Link href={"/partners"} onClick={() => { setActiveTab("partners"); toggleMenu(); }} className={`flex items-center hover:text-cyan-500 ${activeTab === "partners" ? "text-cyan-500" : ""}`}>
+            <Link href={"/pages/partners"} onClick={() => { setActiveTab("partners"); toggleMenu(); }} className={`flex items-center hover:text-cyan-500 ${activeTab === "partners" ? "text-cyan-500" : ""}`}>
               <FaHandshake className='mr-2' /> Partners
             </Link>
-            <Link href={"/contactus"} onClick={() => { setActiveTab("contactus"); toggleMenu(); }} className={`flex items-center hover:text-cyan-500 ${activeTab === "contactus" ? "text-cyan-500" : ""}`}>
+            <Link href={"/pages/contactus"} onClick={() => { setActiveTab("contactus"); toggleMenu(); }} className={`flex items-center hover:text-cyan-500 ${activeTab === "contactus" ? "text-cyan-500" : ""}`}>
               <MdOutlinePhoneCallback className='mr-2' /> Contact Us
             </Link>
           </nav>
