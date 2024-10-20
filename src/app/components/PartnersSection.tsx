@@ -1,40 +1,39 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { FaAws, FaGoogle, FaMicrosoft } from 'react-icons/fa';
-import { SiAzuredevops, SiAutodesk, SiZoho, SiDell, SiFortinet, SiLenovo, SiQnap } from 'react-icons/si';
+import Image from 'next/image';
 
 const partners = [
-  { name: 'HPE', icon: <SiDell className="text-blue-600 text-6xl" /> },
-  { name: 'Aruba', icon: <SiFortinet className="text-orange-500 text-6xl" /> },
-  { name: 'Juniper', icon: <SiFortinet className="text-green-500 text-6xl" /> }, // Placeholder
-  { name: 'Cisco', icon: <SiDell className="text-blue-600 text-6xl" /> },
-  { name: 'Sophos', icon: <SiFortinet className="text-blue-600 text-6xl" /> }, // Placeholder
-  { name: 'Fortinet', icon: <SiFortinet className="text-red-500 text-6xl" /> },
-  { name: 'CheckPoint', icon: <SiDell className="text-yellow-600 text-6xl" /> }, // Placeholder
-  { name: 'PaloAlto', icon: <SiFortinet className="text-green-600 text-6xl" /> },
-  { name: 'BeyondTrust', icon: <SiDell className="text-blue-500 text-6xl" /> }, // Placeholder
-  { name: 'Barracuda', icon: <SiQnap className="text-blue-600 text-6xl" /> },
-  { name: 'MimeCast', icon: <SiFortinet className="text-red-500 text-6xl" /> },
-  { name: 'CrowdStrike', icon: <SiFortinet className="text-red-500 text-6xl" /> },
-  { name: 'TrendMicro', icon: <SiFortinet className="text-red-500 text-6xl" /> },
-  { name: 'Microsoft', icon: <FaMicrosoft className="text-blue-600 text-6xl" /> },
-  // { name: 'Adobe', icon: <FaAdobe className="text-red-500 text-6xl" /> },
-  { name: 'Freshwork', icon: <SiFortinet className="text-green-600 text-6xl" /> },
-  { name: 'Autodesk', icon: <SiAutodesk className="text-teal-500 text-6xl" /> },
-  { name: 'ZOHO', icon: <SiZoho className="text-red-500 text-6xl" /> },
-  { name: 'Nitro', icon: <SiFortinet className="text-red-500 text-6xl" /> }, // Placeholder
-  { name: 'AWS', icon: <FaAws className="text-yellow-500 text-6xl" /> },
-  { name: 'Azure', icon: <SiAzuredevops className="text-blue-600 text-6xl" /> },
-  { name: 'Google', icon: <FaGoogle className="text-red-500 text-6xl" /> },
-  { name: ' I2K2 Networks', icon: <SiDell className="text-blue-600 text-6xl" /> }, // Placeholder
-  { name: 'DELL', icon: <SiDell className="text-blue-600 text-6xl" /> },
-  { name: 'Lenovo', icon: <SiLenovo className="text-red-500 text-6xl" /> },
-  { name: 'Synology', icon: <SiQnap className="text-blue-600 text-6xl" /> },
-  { name: 'QNAP', icon: <SiQnap className="text-blue-600 text-6xl" /> },
-  { name: 'NetAPP', icon: <SiDell className="text-blue-600 text-6xl" /> }, // Placeholder
-  { name: 'EMC Dell', icon: <SiDell className="text-blue-600 text-6xl" /> },
+  { name: 'HPE', image: '/ourpartners/hpe.png' },
+  { name: 'Aruba', image: '/ourpartners/aruba.png' },
+  { name: 'Juniper', image: '/ourpartners/juniper.png' },
+  { name: 'Cisco', image: '/ourpartners/cisco.png' },
+  { name: 'Sophos', image: '/ourpartners/sophos.png' },
+  { name: 'Fortinet', image: '/ourpartners/fortinet.png' },
+  { name: 'CheckPoint', image: '/ourpartners/checkpoint.png' },
+  { name: 'PalloAlto', image: '/ourpartners/palloalto.png' },
+  { name: 'BeyondTrust', image: '/ourpartners/beyondtrust.png' },
+  { name: 'Barracuda', image: '/ourpartners/baracuda.png' },
+  { name: 'MimeCast', image: '/ourpartners/mimecast.png' },
+  { name: 'CrowdStrike', image: '/ourpartners/crowd-strike.png' },
+  { name: 'TrendMicro', image: '/ourpartners/trendmicro.png' },
+  { name: 'Microsoft', image: '/ourpartners/microsoft.png' },
+  { name: 'Freshwork', image: '/ourpartners/freshwork.png' },
+  { name: 'Autodesk', image: '/ourpartners/autodesk.png' },
+  { name: 'ZOHO', image: '/ourpartners/zoho.png' },
+  { name: 'Nitro', image: '/ourpartners/nitro.png' },
+  { name: 'AWS', image: '/ourpartners/aws.png' },
+  { name: 'Azure', image: '/ourpartners/azure.png' },
+  { name: 'Google', image: '/ourpartners/google.png' },
+  { name: 'I2K2 Networks', image: '/ourpartners/i2k2-networks.png' },
+  { name: 'DELL', image: '/ourpartners/dell.png' },
+  { name: 'Lenovo', image: '/ourpartners/lenovo.png' },
+  { name: 'Synology', image: '/ourpartners/synology.png' },
+  { name: 'QNAP', image: '/ourpartners/qnap.png' },
+  { name: 'NetAPP', image: '/ourpartners/netapp.png' },
+  { name: 'EMC Dell', image: '/ourpartners/emc-dell.png' },
+  {name:"axisVm", image:'/ourpartners/axisvm.png'}
 ];
 
-const PartnersSection: React.FC = () => {
+export default function PartnersSection() {
   const [isPaused, setIsPaused] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
 
@@ -55,34 +54,37 @@ const PartnersSection: React.FC = () => {
   };
 
   return (
-  <div className='bg-[#eef4fa]'>
-    <div className="container mx-auto p-6 ">
-      <h2 className="text-4xl font-extrabold text-center mb-3 text-gray-900">Our Partner Alliences</h2>
-      <p className="text-center text-gray-700 mb-12 max-w-2xl mx-auto text-xl font-medium">We work with the best partners</p>
-      <div className="overflow-hidden relative">
-        {/* Animation wrapper */}
-        <div
-          className={`flex justify-center items-center space-x-12 ${
-            isPaused ? '' : 'animate-scroll'
-          } w-max`}
-          ref={scrollRef}
-          onClick={handleAnimationClick}
-        >
-          {/* Looping the partners array twice to create continuous effect */}
-          {[...partners, ...partners].map((partner, index) => (
-            <div
-              key={index}
-              className="flex flex-col items-center justify-center w-32 h-32 sm:w-40 sm:h-40 p-2 bg-gray-100 rounded-lg shadow-lg hover:scale-105 transform transition-all duration-300 ease-in-out"
-            >
-              {partner.icon} {/* Render the icon */}
-              <h3 className="mt-4 text-lg font-semibold text-center text-black">{partner.name}</h3>
-            </div>
-          ))}
+    <div className="bg-[#eef4fa]">
+      <div className="container mx-auto p-6">
+        <h2 className="text-4xl font-extrabold text-center mb-3 text-gray-900">Our Partner Alliances</h2>
+        <p className="text-center text-gray-700 mb-12 max-w-2xl mx-auto text-xl font-medium">We work with the best partners</p>
+        <div className="overflow-hidden relative">
+          <div
+            className={`flex justify-center items-center space-x-12 ${
+              isPaused ? '' : 'animate-scroll'
+            } w-max`}
+            ref={scrollRef}
+            onClick={handleAnimationClick}
+          >
+            {[...partners, ...partners].map((partner, index) => (
+              <div
+                key={index}
+                className="flex flex-col items-center justify-center w-32 h-32 sm:w-40 sm:h-40 p-2 bg-gray-100 rounded-lg shadow-lg hover:scale-105 transform transition-all duration-300 ease-in-out"
+              >
+                <div className="relative w-24 h-24">
+                  <Image
+                    src={partner.image}
+                    alt={`${partner.name} logo`}
+                    layout="fill"
+                    objectFit="contain"
+                  />
+                </div>
+                <h3 className="mt-4 text-lg font-semibold text-center text-black">{partner.name}</h3>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
-    </div>
   );
-};
-
-export default PartnersSection;
+}

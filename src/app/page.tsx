@@ -1,13 +1,14 @@
 "use client";
 import Hero from "./components/Hero";
 import AboutUs from "./components/Aboutus";
-import ServicesComponent from "./components/ServicesComponent";
+import Services from "./components/ServicesComponent";
 
 import ClientsSection from "./components/ClientsSection";
 import PartnersSection from "./components/PartnersSection";
 
 import WhyChooseUs from "./components/whychooseus";
 import BookCall from "./components/BookaCall";
+import ScrollToTop from "./components/ScrollToTop";
 
 export default function Home() {
   return (
@@ -19,7 +20,7 @@ export default function Home() {
       <AboutUs />
 
       {/* Services Section */}
-      <ServicesComponent />
+      <Services />
 <div className=""></div>
       
       {/* {why choose us section} */}
@@ -31,6 +32,7 @@ export default function Home() {
       {/* Partners Section */}
       <PartnersSection />
 <BookCall></BookCall>
+<ScrollToTop></ScrollToTop>
      
     </div>
   );

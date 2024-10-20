@@ -20,32 +20,32 @@ const Footer = () => {
 
   const handleSubmit = ()=>{};
   return (
-    <footer className={` ${roboto.className} bg-gradient-to-r from-zinc-200 via-zinc-300 to-zinc-400 flex flex-col space-y-8 space-x-8 px-8 py-10 text-black`}>
+    <footer className={` ${roboto.className} bg-gray-900 flex flex-col space-y-8 space-x-8 px-8 py-10 text-black`}>
       <div className=' grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 space-y-8 ml-8 mr-8 '>
         <div className='justify-center py-12 sm:ml-5'>
             <Image src={"/Asset 2.svg"} alt='delhincrmap' width="170" height='100'></Image>
         </div>
         <div className=' space-y-6'>
             <ul>
-                <Link href={"/"} ><li className='font-extralight text-lg'>Home</li></Link>
+                <Link href={"/"} ><li className='font-extralight text-lg text-gray-100'>Home</li></Link>
                 
-                <Link href={'/services'}><li className='font-extrabold  text-base text-slate-600  hover:text-black hover:font-thin transition-all hover:translate-x-2 duration-300 cursor-pointer '>Services</li></Link>
-               <Link href={'/clients'}><li className='font-extrabold  text-base text-slate-600  hover:text-black hover:font-thin transition-all hover:translate-x-2 duration-300 cursor-pointer'>Clients</li></Link> 
-               <Link href={'/partners'}> <li className='font-extrabold  text-base text-slate-600  hover:text-black hover:font-thin transition-all hover:translate-x-2 duration-300 cursor-pointer'>Partners</li></Link>
-                <Link href={'/contactus'}><li className='font-extrabold  text-base text-slate-600  hover:text-black hover:font-thin transition-all hover:translate-x-2 duration-300 cursor-pointer'>Contact Us</li></Link>
+                <Link href={'/services'}><li className='font-extrabold  text-base text-gray-100  hover:text-blue hover:font-thin transition-all hover:translate-x-2 duration-300 cursor-pointer '>Services</li></Link>
+               <Link href={'/clients'}><li className='font-extrabold  text-base text-gray-100  hover:text-blue hover:font-thin transition-all hover:translate-x-2 duration-300 cursor-pointer'>Clients</li></Link> 
+               <Link href={'/partners'}> <li className='font-extrabold  text-base text-gray-100  hover:text-blue hover:font-thin transition-all hover:translate-x-2 duration-300 cursor-pointer'>Partners</li></Link>
+                <Link href={'/contactus'}><li className='font-extrabold  text-base text-gray-100  hover:text-blue hover:font-thin transition-all hover:translate-x-2 duration-300 cursor-pointer'>Contact Us</li></Link>
             </ul>
         </div>
 
         <div className="flex flex-col space-y-2 ">
       {/* Contact Us Heading */}
-      <div className="font-extralight text-lg ">
+      <div className="font-extralight text-lg text-gray-100 ">
         Contact Us
       </div>
 
       {/* Email */}
       <div className="flex items-center text-base">
-        <MdEmail className="text-gray-600 hover:text-indigo-600 transition duration-300" />
-        <span className="font-bold  ml-2">Info@bytechnology.in </span>
+        <MdEmail className="text-gray-100 hover:text-indigo-600 transition duration-300" />
+        <span className="font-bold  ml-2 text-gray-100">Info@bytechnology.in </span>
         <FiCopy
           onClick={() => copyToClipboard('Info@bytechnology.in')}
           className="cursor-pointer font-light ml-1 text-gray-600 hover:text-indigo-600 transition duration-300"
@@ -55,8 +55,8 @@ const Footer = () => {
 
       {/* Phone */}
       <div className="flex items-center text-base">
-        <FiPhone className="text-gray-600 hover:text-indigo-600 transition duration-300" />
-        <span className="font-semibold ml-1">+91-8800202305</span>
+        <FiPhone className="text-gray-100 hover:text-indigo-600 transition duration-300" />
+        <span className="font-semibold ml-1 text-gray-100">+91-8800202305</span>
         <FiCopy
           onClick={() => copyToClipboard('+91-8800202305')}
           className="cursor-pointer ml-1 text-gray-600 hover:text-indigo-600 transition duration-300"
@@ -67,19 +67,19 @@ const Footer = () => {
       {/* Social Links */}
       <div className="flex space-x-4 py-4 justify-left">
         <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-          <FaFacebook className="text-slate-950 text-2xl  hover:text-indigo-600 transition-all shadow-2xl transform hover:-translate-y-3 ease-in-out cursor-pointer" />
+          <FaFacebook className="text-gray-100 text-2xl  hover:text-indigo-600 transition-all shadow-2xl transform hover:-translate-y-3 ease-in-out cursor-pointer" />
         </a>
         <a href="https://www.linkedin.com/company/bytechnology-ind" target="_blank" rel="noopener noreferrer">
-          <FaLinkedin className="text-slate-950 text-2xl  hover:text-indigo-600 transition-all shadow-2xl transform hover:-translate-y-3 ease-in-out cursor-pointer" />
+          <FaLinkedin className="text-gray-100 text-2xl  hover:text-indigo-600 transition-all shadow-2xl transform hover:-translate-y-3 ease-in-out cursor-pointer" />
         </a>
         <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-          <FaTwitter className="text-slate-950 text-2xl  hover:text-indigo-600 transition-all shadow-2xl transform hover:-translate-y-3 ease-in-out cursor-pointer" />
+          <FaTwitter className="text-gray-100 text-2xl  hover:text-indigo-600 transition-all shadow-2xl transform hover:-translate-y-3 ease-in-out cursor-pointer" />
         </a>
       </div>
     </div>
 
     <div className="flex flex-col items-center">
-      <p className="text-lg mb-2 text-center">
+      <p className="text-lg mb-2 text-center text-gray-100">
         Subscribe to our <br /> Newsletter
       </p>
       
@@ -88,13 +88,13 @@ const Footer = () => {
         <input 
           type="email" 
           placeholder="Enter your email" 
-          className="bg-slate-400 text-black placeholder-white border-black shadow-md h-10 px-4 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-blue-700 transition-all"
+          className="bg-slate-400 text-white placeholder-white border-black shadow-md h-10 px-4 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-blue-700 transition-all"
         />
 
         {/* Submit Button */}
         <button 
           onClick={handleSubmit}
-          className="bg-blue-700 text-black font-mono text-base px-4 rounded-r-lg hover:bg-blue-900 transition-all"
+          className="bg-blue-700 text-gray-100 font-mono text-base px-4 rounded-r-lg hover:bg-blue-900 transition-all"
         >
           Submit
         </button>
@@ -107,10 +107,10 @@ const Footer = () => {
 
       <div className="flex flex-col md:flex-row justify-between items-center border-t border-gray-700 pt-4">
   {/* Left Section */}
-  <div className="mb-2 md:mb-0">
+  <div className="mb-2 md:mb-0 text-gray-100">
     Created by 
     <a
-      href="https://your-website-url.com" 
+      href="/" 
       target="_blank" 
       rel="noopener noreferrer" 
       className="text-blue-500 hover:text-blue-700 transition-colors duration-300 ml-1"
@@ -120,7 +120,7 @@ const Footer = () => {
   </div>
 
   {/* Right Section */}
-  <div className="text-center md:text-right">
+  <div className="text-center md:text-right text-gray-100">
     All rights reserved © {new Date().getFullYear()}
   </div>
 </div>
