@@ -52,7 +52,7 @@ const heroSections: HeroSection[] = [
   {
     title: "Secure Your Digital Assets, 24/7",
     description: "Safeguard your critical data and networks with proactive, multi-layered security solutions designed to protect against ever-evolving cyber threats.",
-    imageSrc: "/Assests/image2hero.jpg",
+    imageSrc: "/Assests/image2Hero.jpg",
     link: "/innovate"
   },
   {
@@ -143,7 +143,7 @@ export default function Hero() {
             <p className="text-lg sm:text-xl md:text-2xl text-white mb-8">
               {currentHero.description}
             </p>
-            <Link href={'/services'}>
+            <Link href={'/pages/services'}>
               <Button className="bg-white text-black hover:bg-gray-200 text-lg px-6 py-3">
                 Learn More
               </Button>

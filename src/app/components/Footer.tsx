@@ -29,10 +29,10 @@ const Footer = () => {
             <ul>
                 <Link href={"/"} ><li className='font-extralight text-lg text-gray-100'>Home</li></Link>
                 
-                <Link href={'/services'}><li className='font-extrabold  text-base text-gray-100  hover:text-blue hover:font-thin transition-all hover:translate-x-2 duration-300 cursor-pointer '>Services</li></Link>
-               <Link href={'/clients'}><li className='font-extrabold  text-base text-gray-100  hover:text-blue hover:font-thin transition-all hover:translate-x-2 duration-300 cursor-pointer'>Clients</li></Link> 
-               <Link href={'/partners'}> <li className='font-extrabold  text-base text-gray-100  hover:text-blue hover:font-thin transition-all hover:translate-x-2 duration-300 cursor-pointer'>Partners</li></Link>
-                <Link href={'/contactus'}><li className='font-extrabold  text-base text-gray-100  hover:text-blue hover:font-thin transition-all hover:translate-x-2 duration-300 cursor-pointer'>Contact Us</li></Link>
+                <Link href={'/pages/services'}><li className='font-extrabold  text-base text-gray-100  hover:text-blue hover:font-thin transition-all hover:translate-x-2 duration-300 cursor-pointer '>Services</li></Link>
+               <Link href={'/pages/clients'}><li className='font-extrabold  text-base text-gray-100  hover:text-blue hover:font-thin transition-all hover:translate-x-2 duration-300 cursor-pointer'>Clients</li></Link> 
+               <Link href={'/pages/partners'}> <li className='font-extrabold  text-base text-gray-100  hover:text-blue hover:font-thin transition-all hover:translate-x-2 duration-300 cursor-pointer'>Partners</li></Link>
+                <Link href={'/pages/contactus'}><li className='font-extrabold  text-base text-gray-100  hover:text-blue hover:font-thin transition-all hover:translate-x-2 duration-300 cursor-pointer'>Contact Us</li></Link>
             </ul>
         </div>
 

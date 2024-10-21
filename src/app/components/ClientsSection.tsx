@@ -6,7 +6,7 @@ const Clients = () => {
   const clients = [
     {
       name: 'Esme',
-      image: '/clients/esme.jpeg.jpg',
+      image: '/clients/esme.jpg',
       testimonial: 'Esme has been our partner for years and has consistently delivered top-notch services.',
     },
     {
@@ -21,7 +21,7 @@ const Clients = () => {
     },
     {
       name: 'Asahi India Glass',
-      image: '/clients/asahi_india_glass_limited_logo.jpeg.jpg',
+      image: '/clients/ais.jpg',
       testimonial: 'Asahi India Glass has consistently exceeded our expectations with their services.',
     },
     {
@@ -84,7 +84,7 @@ const Clients = () => {
       </div>
 
       <div className="flex items-center justify-center mt-6">
-        <Link href="/clients">
+        <Link href="/pages/clients">
           <div className="w-40 px-2 py-2 text-center bg-green-500 text-white rounded-lg shadow-md hover:bg-green-600 transition-colors">
             View All Clients
           </div>
