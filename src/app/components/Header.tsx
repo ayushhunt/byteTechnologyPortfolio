@@ -27,10 +27,10 @@ export default function StickyHeader() {
 
   const navItems = [
     { name: 'Home', href: '/' },
-    { name: 'Services', href: '/services' },
-    { name: 'Clients', href: '/clients' },
-    { name: 'Partners', href: '/partners' },
-    { name: 'Contact Us', href: '/contactus' },
+    { name: 'Services', href: '/pages/services' },
+    { name: 'Clients', href: '/pages/clients' },
+    { name: 'Partners', href: '/pages/partners' },
+    { name: 'Contact Us', href: '/pages/contactus' },
   ]
 
   const handleNavClick = () => {

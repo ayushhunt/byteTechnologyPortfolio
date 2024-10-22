@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react'
 import { Star, ChevronLeft, ChevronRight } from "lucide-react"
+import Image from 'next/image'
 
 const clients = [
   { name: "RSM Astute", image: "/clients/logo@2x.webp" },
@@ -73,7 +74,7 @@ export default function ClientsPage() {
         <div className="text-center mb-12">
           <h1 className="text-5xl font-bold text-purple-400 mb-4">Our Esteemed Clients</h1>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            We're proud to work with some of the most innovative companies in the industry.
+            We are proud to work with some of the most innovative companies in the industry.
           </p>
         </div>
         
@@ -87,10 +88,12 @@ export default function ClientsPage() {
               <div className="w-full max-w-md relative">
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full filter blur-3xl opacity-20 pulse"></div>
                 <div className="relative bg-gray-700 rounded-2xl p-6 flex flex-col items-center justify-center h-full">
-                  <img 
+                  <Image 
                     src={clients[currentIndex].image} 
                     alt={clients[currentIndex].name} 
                     className="max-w-full max-h-40 object-contain mb-4 filter invert"
+                    width={160} // Set an appropriate width for your image
+                    height={40} // Set an appropriate height for your image
                   />
                   <h2 className="text-2xl font-semibold text-purple-400 mt-4">{clients[currentIndex].name}</h2>
                 </div>
@@ -110,10 +113,12 @@ export default function ClientsPage() {
         <div className="mt-12 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8">
           {clients.map((client, index) => (
             <div key={index} className="bg-gray-800 rounded-xl p-4 flex items-center justify-center hover:shadow-purple-500/20 transition-shadow duration-300">
-              <img 
+              <Image 
                 src={client.image} 
                 alt={client.name} 
                 className="max-w-full max-h-16 object-contain filter invert"
+                width={80} // Set an appropriate width for your image
+                height={40} // Set an appropriate height for your image
               />
             </div>
           ))}

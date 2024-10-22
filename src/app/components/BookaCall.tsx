@@ -14,19 +14,19 @@ export default function BookCall() {
   }, [])
 
   return (
-    <section className="bg-black text-white rounded-3xl  my-10 py-5 max-w-auto mx-7 overflow-hidden">
+    <section className="bg-black text-white rounded-3xl my-10 py-5 max-w-auto mx-7 overflow-hidden">
       <div className="relative p-8 md:p-16">
         <div className="text-center max-w-4xl mx-auto">
-          <h3 className="text-medium mb-8 text-gray-400 font-montreal  ">(Need an unfair advantage?)</h3>
+          <h3 className="text-medium mb-8 text-gray-400 font-montreal">(Need an unfair advantage?)</h3>
           <h1 className="text-6xl md:text-6xl font-bold mb-8 font-montreal">LET'S MAKE<br />IT HAPPEN</h1>
           <button
-            className={`bg-white text-black px-6 py-3  mt-5 rounded-full text-lg font-semibold transition-all duration-300 ease-in-out ${
+            className={`bg-white text-black px-6 py-3 mt-5 rounded-full text-lg font-semibold transition-all duration-300 ease-in-out ${
               isHovered ? 'transform scale-105' : ''
             }`}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
             data-cal-namespace="30min"
-            data-cal-link="pankajthedeveloper/30min"
+            data-cal-link="by-technology-c6apcb/30min"
             data-cal-config='{"layout":"month_view"}'
           >
             BOOK A CALL ↗
@@ -44,7 +44,7 @@ export default function BookCall() {
           </div>
           <div className="text-right text-md font-montreal">
             <p>FOR FURTHER INQUIRIES</p>
-            <p >↳ info@bytechnology.com</p>
+            <p>↳ info@bytechnology.com</p>
           </div>
         </div>
       </div>

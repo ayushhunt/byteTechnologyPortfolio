@@ -85,7 +85,7 @@ const Clients = () => {
       </div>
 
       <div className="flex items-center justify-center mt-6">
-        <Link href="/clients">
+        <Link href="/pages/clients">
           <div className="w-40 px-2 py-2 text-center bg-green-500 text-white rounded-lg shadow-md hover:bg-green-600 transition-colors">
             View All Clients
           </div>

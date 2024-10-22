@@ -38,18 +38,21 @@ export default function ContactUs() {
       [name]: value
     }));
   };
-
+  const sheeturl = 'https://script.google.com/macros/s/AKfycbwqmPcKo-_XNCJVtNFuGHrHwM-6uxhL4WXRrzfPpaoKBSHDsOAF8HdBNKUuYFzo_Xv4/exec'
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setFormStatus('submitting');
+    
     try {
-      const response = await fetch('/api/submit-form', {
+      const response = await fetch(sheeturl, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(formData),
+        mode: 'no-cors'  // Explicitly enable CORS
       });
+      
       if (response.ok) {
         setFormStatus('submitted');
         setFormData({ name: '', email: '', mobile: '', message: '' });
@@ -61,6 +64,9 @@ export default function ContactUs() {
       setFormStatus('error');
     }
   };
+  
+  
+  
 
   return (
     <div className="min-h-screen bg-gray-900 text-gray-100 p-4 sm:p-6 lg:p-8 relative overflow-hidden">
@@ -69,7 +75,7 @@ export default function ContactUs() {
         <div className="text-center mb-12">
           <h1 className="text-5xl font-bold text-purple-400 mb-4">Contact Us</h1>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            We're here to help and answer any question you might have. Reach out to us and we'll respond as soon as we can.
+            We are here to help and answer any question you might have. Reach out to us and we will respond as soon as we can.
           </p>
         </div>
         
@@ -139,11 +145,11 @@ export default function ContactUs() {
               </button>
             </form>
             {formStatus === 'submitted' && (
-              <p className="mt-4 text-green-400 text-center">Thank you for your message. We'll get back to you soon!</p>
+              <p className="mt-4 text-green-400 text-center">Thank you for your message. We will get back to you soon!</p>
             )}
-            {formStatus === 'error' && (
+            {/* {formStatus === 'error' && (
               <p className="mt-4 text-red-400 text-center">An error occurred. Please try again later.</p>
-            )}
+            )} */}
           </div>
           
           <div className="space-y-8">

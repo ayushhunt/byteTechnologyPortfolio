@@ -1,23 +1,31 @@
 
 "use client"
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, ReactNode, ButtonHTMLAttributes } from 'react'
 import { motion } from 'framer-motion'
 import { ChevronDown, ChevronUp } from 'lucide-react'
 import Image from 'next/image'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/app/components/Card'
 
+
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  children: ReactNode;
+  variant?: 'default' | 'ghost';
+  size?: 'default' | 'sm';
+  className?: string;
+}
 
 // Button component
-const Button = ({ children, variant = 'default', size = 'default', className = '', ...props }) => {
-  const baseStyles = 'inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background'
+const Button: React.FC<ButtonProps> = ({ children, variant = 'default', size = 'default', className = '', ...props }) => {
+  const baseStyles = 'inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background';
   const variantStyles = {
     default: 'bg-primary text-primary-foreground hover:bg-primary/90',
     ghost: 'hover:bg-accent hover:text-accent-foreground',
-  }
+  };
   const sizeStyles = {
     default: 'h-10 py-2 px-4',
     sm: 'h-9 px-3 rounded-md',
-  }
+  };
   
   return (
     <button
@@ -29,26 +37,7 @@ const Button = ({ children, variant = 'default', size = 'default', className = '
   )
 }
 
-// Card components
-const Card = ({ className, ...props }) => (
-  <div className={`rounded-lg border bg-card text-card-foreground shadow-sm ${className}`} {...props} />
-)
 
-const CardHeader = ({ className, ...props }) => (
-  <div className={`flex flex-col space-y-1.5 p-6 ${className}`} {...props} />
-)
-
-const CardTitle = ({ className, ...props }) => (
-  <h3 className={`text-2xl font-semibold leading-none tracking-tight ${className}`} {...props} />
-)
-
-const CardDescription = ({ className, ...props }) => (
-  <p className={`text-sm text-muted-foreground ${className}`} {...props} />
-)
-
-const CardContent = ({ className, ...props }) => (
-  <div className={`p-6 pt-0 ${className}`} {...props} />
-)
 
 const partners = {
   Network: ['HPE', 'Aruba', 'Juniper', 'Cisco', 'Sophos'],
@@ -86,7 +75,7 @@ export default function PartnerPage() {
               imageLoaded = true
               sources[company] = imgSrc
             } catch (error) {
-              
+              console.log(error)
             }
           }
           if (!imageLoaded) {
