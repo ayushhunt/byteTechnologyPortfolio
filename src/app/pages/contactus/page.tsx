@@ -38,7 +38,7 @@ export default function ContactUs() {
       [name]: value
     }));
   };
-  const sheeturl = 'https://script.google.com/macros/s/AKfycbw011Cu1qmwoIxOXn3qVMWIgyAI5QAt25CCl7ugjsjyZPDbnZIsfl7wnn5MxMB4MEsn/exec'
+  const sheeturl = 'https://script.google.com/macros/s/AKfycbwqmPcKo-_XNCJVtNFuGHrHwM-6uxhL4WXRrzfPpaoKBSHDsOAF8HdBNKUuYFzo_Xv4/exec'
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setFormStatus('submitting');
