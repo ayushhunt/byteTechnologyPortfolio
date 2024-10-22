@@ -5,45 +5,45 @@ import Link from 'next/link';
 const Clients = () => {
   const clients = [
     {
-      name: 'Esme',
+      name: 'Esme Consumer',
       image: '/clients/esme.jpg',
-      testimonial: 'Esme has been our partner for years and has consistently delivered top-notch services.',
+      testimonial: 'They’ve been a lifesaver managing our Active Directory and IT infrastructure, always providing exceptional support when needed.',
     },
     {
       name: 'Artivatic AI',
       image: '/clients/artivatic.png',
-      testimonial: 'Artivatic AI has redefined our AI strategy with their cutting-edge technology.',
+      testimonial: 'We trust them completely with our security – they provided and installed everything with precision and care.',
     },
     {
       name: 'HLS Global',
       image: '/clients/hls global.png',
-      testimonial: 'We appreciate HLS Global’s professionalism and attention to detail.',
+      testimonial: 'Their team handled our server installations and security setups seamlessly, keeping our systems running smoothly',
     },
     
     {
       name: 'Asahi India Glass',
       image: '/clients/ais.jpg',
-      testimonial: 'Asahi India Glass has consistently exceeded our expectations with their services.',
+      testimonial: 'Their comprehensive approach to IT and security has been crucial, just like for their other clients.',
     },
     {
       name: 'Godfrey Phillips',
       image: '/clients/godfrey phillips.png',
-      testimonial: 'Godfrey Phillips has been a reliable partner for our long-term growth.',
+      testimonial: 'They provided and installed our security appliances efficiently, significantly strengthening our IT defenses.',
     },
     {
       name: 'RenewBuy',
       image: '/clients/renewbuy.png',
-      testimonial: 'RenewBuy has helped us achieve significant business results through innovative solutions.',
+      testimonial: 'Their consistent approach to security and IT management has been a game-changer for us',
     },
     {
       name: 'Leixir Dental',
       image: '/clients/leixir dental.png',
-      testimonial: 'Leixir Dental’s expertise has elevated the quality of our operations.',
+      testimonial: 'Their technical support has been invaluable in managing our IT infrastructure. We always feel in safe hands',
     },
     {
-      name:'Lombardi',
+      name:' Lombardi Engineering India Pvt. Ltd',
       image:'/clients/lombardi.png',
-      testimonial:'by technology provide great facility.'
+      testimonial:'They expertly managed our AD migration and continue to provide top-notch IT support. We couldn’t be happier..'
     }
   ];
 

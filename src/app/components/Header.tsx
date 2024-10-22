@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Menu, X, ChevronRight } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import { getCalApi } from "@calcom/embed-react"
 
 export default function StickyHeader() {
@@ -67,12 +67,12 @@ export default function StickyHeader() {
             <div className="flex items-center space-x-4">
               <button
                 data-cal-namespace="30min"
-                data-cal-link="pankajthedeveloper/30min"
-                data-cal-config='{"layout":"month_view"}'
+                data-cal-link="by-technology-c6apcb/30min"
+            data-cal-config='{"layout":"month_view"}'
                 className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-full text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all duration-200 ease-in-out"
               >
-                Book a Call
-                <ChevronRight className="ml-2 -mr-1 h-5 w-5" />
+                Book a Call ↗
+                
               </button>
               <button
                 onClick={() => setIsOpen(!isOpen)}
@@ -97,7 +97,7 @@ export default function StickyHeader() {
             <div>
               <div className="flex items-center justify-between mb-8">
                 <Link href="/" className="text-white font-bold text-2xl flex items-center" onClick={handleNavClick}>
-                  <Image src="/Asset 24x.png" alt="Company Logo" width={40} height={40} className="mr-2" />
+                  <Image src="/Asset 24x.png" alt="Company Logo" width={30} height={30} className="mr-2" />
                   <span></span>
                 </Link>
                 <button
