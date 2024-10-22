@@ -19,6 +19,7 @@ const Clients = () => {
       image: '/clients/hls global.png',
       testimonial: 'We appreciate HLS Global’s professionalism and attention to detail.',
     },
+    
     {
       name: 'Asahi India Glass',
       image: '/clients/ais.jpg',

@@ -5,7 +5,7 @@ import { FaWhatsapp, FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa'
 const SocialSidebar = () => {
   return (
     <div className="fixed top-1/2 right-0 transform -translate-y-1/2 z-10 flex flex-col space-y-4 p-2 bg-white shadow-lg">
-      <a href="https://wa.me/your-number" target="_blank" rel="noopener noreferrer">
+      <a href="https://wa.me/+91 8800202305" target="_blank" rel="noopener noreferrer">
         <FaWhatsapp className="text-green-500 hover:text-green-600" size={30} />
       </a>
       <a href="https://www.facebook.com/your-profile" target="_blank" rel="noopener noreferrer">
