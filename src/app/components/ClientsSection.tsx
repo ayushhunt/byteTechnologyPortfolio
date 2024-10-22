@@ -6,7 +6,7 @@ const Clients = () => {
   const clients = [
     {
       name: 'Esme',
-      image: '/clients/esme.jpeg.jpg',
+      image: '/clients/esme.jpg',
       testimonial: 'Esme has been our partner for years and has consistently delivered top-notch services.',
     },
     {
@@ -19,9 +19,10 @@ const Clients = () => {
       image: '/clients/hls global.png',
       testimonial: 'We appreciate HLS Global’s professionalism and attention to detail.',
     },
+    
     {
       name: 'Asahi India Glass',
-      image: '/clients/asahi_india_glass_limited_logo.jpeg.jpg',
+      image: '/clients/ais.jpg',
       testimonial: 'Asahi India Glass has consistently exceeded our expectations with their services.',
     },
     {
