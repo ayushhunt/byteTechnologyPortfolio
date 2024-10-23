@@ -110,7 +110,7 @@ export default function Hero() {
   const currentHero = heroSections[currentIndex]
 
   return (
-    <div className="relative w-full h-screen overflow-hidden">
+    <div className="relative w-full h-screen overflow-hidden z-20">
       {heroSections.map((section, index) => (
         <div
           key={index}
