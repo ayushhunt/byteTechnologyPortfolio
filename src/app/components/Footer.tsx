@@ -108,7 +108,7 @@ const Footer = () => {
       <div className="flex flex-col md:flex-row justify-between items-center border-t border-gray-700 pt-4">
   {/* Left Section */}
   <div className="mb-2 md:mb-0 text-gray-100">
-    Created by 
+    Developed by 
     <a
       href="https://www.linkedin.com/company/bytechnology-ind" 
       target="_blank" 
