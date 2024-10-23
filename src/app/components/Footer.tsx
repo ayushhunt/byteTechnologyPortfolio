@@ -110,7 +110,7 @@ const Footer = () => {
   <div className="mb-2 md:mb-0 text-gray-100">
     Created by 
     <a
-      href="/" 
+      href="https://www.linkedin.com/company/bytechnology-ind" 
       target="_blank" 
       rel="noopener noreferrer" 
       className="text-blue-500 hover:text-blue-700 transition-colors duration-300 ml-1"

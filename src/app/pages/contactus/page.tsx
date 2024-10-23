@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
-import { MapPin, Phone, Mail, Send, Star } from "lucide-react"
+import { MapPin, Phone, Mail, Send } from "lucide-react"
 
 const styles = `
   @keyframes float {
@@ -11,14 +11,6 @@ const styles = `
   }
   .float {
     animation: float 6s ease-in-out infinite;
-  }
-  @keyframes twinkle {
-    0% { opacity: 0.5; }
-    50% { opacity: 1; }
-    100% { opacity: 0.5; }
-  }
-  .twinkle {
-    animation: twinkle 2s ease-in-out infinite;
   }
 `;
 
@@ -38,35 +30,30 @@ export default function ContactUs() {
       [name]: value
     }));
   };
-  const sheeturl = 'https://script.google.com/macros/s/AKfycbwqmPcKo-_XNCJVtNFuGHrHwM-6uxhL4WXRrzfPpaoKBSHDsOAF8HdBNKUuYFzo_Xv4/exec'
+
+  const sheeturl = 'https://script.google.com/macros/s/AKfycbxAef0lD6VDQzHM4Wbt7o86OnGeSrMUyV87Br-mWp5ZcwZTodWQ8TNHw8BXBmJF2SQh/exec'
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setFormStatus('submitting');
     
     try {
-      const response = await fetch(sheeturl, {
+      await fetch(sheeturl, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(formData),
-        mode: 'no-cors'  // Explicitly enable CORS
+        mode: 'no-cors'
       });
       
-      if (response.ok) {
-        setFormStatus('submitted');
-        setFormData({ name: '', email: '', mobile: '', message: '' });
-      } else {
-        throw new Error('Form submission failed');
-      }
+      setFormStatus('submitted');
+      setFormData({ name: '', email: '', mobile: '', message: '' });
     } catch (error) {
       console.error('Error:', error);
       setFormStatus('error');
     }
   };
-  
-  
-  
 
   return (
     <div className="min-h-screen bg-gray-900 text-gray-100 p-4 sm:p-6 lg:p-8 relative overflow-hidden">
@@ -147,16 +134,14 @@ export default function ContactUs() {
             {formStatus === 'submitted' && (
               <p className="mt-4 text-green-400 text-center">Thank you for your message. We will get back to you soon!</p>
             )}
-            {/* {formStatus === 'error' && (
+            {formStatus === 'error' && (
               <p className="mt-4 text-red-400 text-center">An error occurred. Please try again later.</p>
-            )} */}
+            )}
           </div>
           
           <div className="space-y-8">
             <div className="bg-gray-800 rounded-2xl shadow-2xl p-8 transition-all duration-300 hover:shadow-purple-500/20 relative overflow-hidden">
-              <div className="absolute top-4 right-4">
-                <Star className="h-6 w-6 text-yellow-400 twinkle" />
-              </div>
+              <div className="absolute top-0 right-0 w-32 h-32 bg-purple-500 rounded-full filter blur-3xl opacity-10"></div>
               <h2 className="text-3xl font-semibold text-purple-400 mb-6">Our Locations</h2>
               <div className="space-y-6">
                 <div>
@@ -171,17 +156,14 @@ export default function ContactUs() {
                   <p className="flex items-center text-gray-300 mb-2">
                     <MapPin className="mr-2 h-5 w-5 text-purple-400" />
                     BY Technology 
-
-Office No.- 14&15, 3rd Floor, Block J-4, Shree Ram Trade Centre, Main Road, Bishanpura, Sector 58, Noida, Uttar Pradesh - 201301
+                    Office No.- 14&15, 3rd Floor, Block J-4, Shree Ram Trade Centre, Main Road, Bishanpura, Sector 58, Noida, Uttar Pradesh - 201301
                   </p>
                 </div>
               </div>
             </div>
             
             <div className="bg-gray-800 rounded-2xl shadow-2xl p-8 transition-all duration-300 hover:shadow-blue-500/20 relative overflow-hidden">
-              <div className="absolute bottom-4 right-4">
-                <Star className="h-6 w-6 text-yellow-400 twinkle" />
-              </div>
+              <div className="absolute bottom-0 left-0 w-32 h-32 bg-blue-500 rounded-full filter blur-3xl opacity-10"></div>
               <h2 className="text-3xl font-semibold text-purple-400 mb-6">Contact Information</h2>
               <div className="space-y-4">
                 <p className="flex items-center text-gray-300">
@@ -199,13 +181,13 @@ Office No.- 14&15, 3rd Floor, Block J-4, Shree Ram Trade Centre, Main Road, Bish
       </div>
       
       <div className="absolute top-10 left-10 opacity-50 float">
-        <Star className="h-8 w-8 text-purple-400" />
+        <div className="w-16 h-16 bg-purple-400 rounded-full filter blur-xl"></div>
       </div>
       <div className="absolute top-1/4 right-10 opacity-50 float" style={{animationDelay: '2s'}}>
-        <Star className="h-6 w-6 text-blue-400" />
+        <div className="w-12 h-12 bg-blue-400 rounded-full filter blur-xl"></div>
       </div>
       <div className="absolute bottom-10 left-1/4 opacity-50 float" style={{animationDelay: '4s'}}>
-        <Star className="h-10 w-10 text-yellow-400" />
+        <div className="w-20 h-20 bg-yellow-400 rounded-full filter blur-xl"></div>
       </div>
     </div>
   )

@@ -32,13 +32,13 @@ const services = [
     title: 'Network and Security',
     icon: Shield,
     description: 'Protect your critical assets with our network security services. From firewall management to intrusion detection systems, we ensure your network remains secure against ever-evolving threats.',
-    minorServices: ['Network Design', 'Firewall Management', 'VPN Solutions', 'Intrusion Detection', 'Network Monitoring'],
+    minorServices: ['Network Load Balancing Management', 'Security Appliances Management', 'VPN Solutions', 'Manage LAYER-2 Devices', 'Network Monitoring'],
   },
   {
     title: 'Data Centre',
     icon: Server,
     description: 'Maximize performance with our data center management services. Whether you need support with server management, storage solutions, or power optimization, we have the tools and expertise to streamline your operations.',
-    minorServices: ['Server Virtualization', 'Storage Solutions', 'Network Infrastructure', 'Power Management', 'Cooling Solutions'],
+    minorServices: ['Server Virtualization', 'Storage Solutions', 'Network Infrastructure', 'Power Management', 'Setup Disaster Recovery'],
   },
   {
     title: 'Cyber Security',
@@ -56,13 +56,13 @@ const services = [
     title: 'Managed Services Provider',
     icon: Headphones,
     description: 'Let us handle the day-to-day management of your IT infrastructure. From network management to data backups and disaster recovery, our managed IT services ensure that your systems run smoothly.',
-    minorServices: ['24/7 IT Support', 'Remote Monitoring', 'Patch Management', 'Backup and Recovery', 'IT Consulting'],
+    minorServices: ['Provide 24/7 IT Infrastructure Support', 'Remote Monitoring', 'Patch Management', 'Backup and Recovery', 'IT Consulting'],
   },
   {
     title: 'Active and Passive Networking',
     icon: Network,
     description: 'Optimize your IT environment with our structured cabling and networking solutions that support high-performance connectivity across your business.',
-    minorServices: ['Switch and Router Configuration', 'Cabling Solutions', 'Network Optimization', 'Wireless Networks', 'Network Troubleshooting'],
+    minorServices: ['Switch And Router Configuration', 'Cabling Solutions', 'Network Optimization', 'Wireless Networks', 'Network Troubleshooting'],
   },
   {
     title: 'Software Licensing',
@@ -80,7 +80,7 @@ const services = [
     title: 'Hardware and Software Reselling',
     icon: Cpu,
     description: 'Get the best deals on the latest technology. We offer a wide range of IT hardware and software from trusted vendors, ensuring that your business is equipped with the right tools to succeed.',
-    minorServices: ['Hardware Procurement', 'Software Distribution', 'Product Consultation', 'Upgrade Services', 'Warranty Management'],
+    minorServices: ['Fresh Licences Of Softwares', 'Software Distribution', 'Product Consultation', 'Upgrade Services', 'Warranty Management','Upgrade Hardware And Software'],
   },
 ]
 
@@ -154,7 +154,7 @@ export default function EnhancedDarkServicePage() {
             Lets discuss how our services can propel your business to new heights in the digital landscape.
           </p>
           <Link 
-            href="/contactus" 
+            href="/pages/contactus" 
             className="text-black hover:text-blue px-3 py-2 rounded-xl text-lg font-medium transition-colors duration-200 ease-in-out bg-white"
           >
             Get in touch
