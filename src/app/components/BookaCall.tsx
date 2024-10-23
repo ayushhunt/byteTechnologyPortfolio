@@ -18,7 +18,9 @@ export default function BookCall() {
       <div className="relative p-8 md:p-16">
         <div className="text-center max-w-4xl mx-auto">
           <h3 className="text-medium mb-8 text-gray-400 font-montreal">(Need an unfair advantage?)</h3>
+
           <h1 className="text-6xl md:text-6xl font-bold mb-8 font-montreal">LET&apos;S MAKE<br />IT HAPPEN</h1>
+
           <button
             className={`bg-white text-black px-6 py-3 mt-5 rounded-full text-lg font-semibold transition-all duration-300 ease-in-out ${
               isHovered ? 'transform scale-105' : ''
@@ -39,7 +41,9 @@ export default function BookCall() {
             </svg>
             <div className='text-md font-montreal'>
               <p>Working Globally</p>
+
               <p>Available Oct &apos;24</p>
+
             </div>
           </div>
           <div className="text-right text-md font-montreal">
