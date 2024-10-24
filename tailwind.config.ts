@@ -27,6 +27,10 @@ const config: Config = {
       animation: {
         scroll: 'scroll 100s linear infinite',
       },
+      zIndex: {
+        'custom-1': '100', // You can name it anything and assign any value
+        'custom-2': '999',
+      }
     },
   },
   plugins: [

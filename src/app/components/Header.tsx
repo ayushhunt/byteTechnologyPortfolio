@@ -92,7 +92,7 @@ export default function StickyHeader() {
 
       {/* Mobile menu */}
       {isOpen && (
-        <div className="fixed inset-0 z-40 bg-gray-900 bg-opacity-95 backdrop-blur-sm md:hidden">
+        <div className="fixed inset-0  bg-gray-900 bg-opacity-95 backdrop-blur-sm md:hidden z-custom-1">
           <div className="flex flex-col h-full justify-between p-6">
             <div>
               <div className="flex items-center justify-between mb-8">
